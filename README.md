@@ -16,7 +16,8 @@ No-code validation completed:
 5. continuity expanded to object / spatial / semantic / temporal
 6. scale treatment metadata added
 7. 2D diagram/motion graphics promoted to first-class explanatory capabilities
-8. validation-driven changes recorded in `CHANGE_LOG.md`
+8. Blender-first model acquisition + deterministic camera/render router designed
+9. validation-driven changes recorded in `CHANGE_LOG.md`
 
 Still pending before/alongside implementation planning when media access is available:
 - actual 10-video timestamp transcript + frame reverse-engineering corpus
@@ -90,6 +91,7 @@ Logical concepts may remain more granular internally; physical files/artifacts a
 - [`docs/03-content/CONTENT_SYSTEM.md`](docs/03-content/CONTENT_SYSTEM.md)
 - [`docs/04-script/SCRIPT_VISUAL_GRAMMAR.md`](docs/04-script/SCRIPT_VISUAL_GRAMMAR.md)
 - [`docs/05-visual/VISUAL_SYSTEM.md`](docs/05-visual/VISUAL_SYSTEM.md)
+- [`docs/05-visual/MODELING_CAMERA_RENDER_ROUTER.md`](docs/05-visual/MODELING_CAMERA_RENDER_ROUTER.md)
 
 ### Production / Quality / Prompts
 - [`docs/06-production/PRODUCTION_SYSTEM.md`](docs/06-production/PRODUCTION_SYSTEM.md)
@@ -116,6 +118,8 @@ Logical concepts may remain more granular internally; physical files/artifacts a
 - Script ↔ Visual alignment over decorative AI footage
 - Geometry when topology is explanatory evidence
 - 2D diagrams when they explain better than 3D
+- Blender-first deterministic camera when spatial motion teaches the explanation
+- Human modeler is an escalation path, not a baseline dependency
 - Cheap reasoning first, expensive pixels last
 - Source → claim → script → visual provenance
 - Record where/why plans changed and their impact
