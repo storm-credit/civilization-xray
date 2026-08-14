@@ -1,7 +1,19 @@
 # Civilization X-Ray — CLAUDE.md
 
 > 이 파일은 `civilization-xray`에서 AI 에이전트가 따라야 하는 최상위 작업 규칙이다.
-> 현재 단계는 **Phase 0: Discovery & Design** 이다. 사용자가 명시적으로 구현을 승인하기 전까지 코드 작성, 앱 스캐폴딩, 자동화 구현, API 연동, 배포 설정을 금지한다.
+> **현재 상태: Phase 0 아키텍처 설계 + Validation 0.5 설계 검증 완료.** 프레임 단위 benchmark 10편 분석은 아직 PARTIAL이며, 사용자가 명시적으로 구현을 승인하기 전까지 코드 작성, 앱 스캐폴딩, 자동화 구현, API 연동, 배포 설정을 금지한다.
+
+## 0. Continuation / Cross-Assistant Rule
+
+이 저장소가 대화보다 우선하는 현재 상태의 정본이다.
+
+다른 Claude/AI 세션에서 이어서 작업할 때:
+- 먼저 `CLAUDE.md`, `docs/00-project/FINAL_DESIGN_BLUEPRINT.md`, `docs/09-validation/VALIDATION_0_5_FINAL.md`, `docs/99-decisions/CHANGE_LOG.md`를 읽는다.
+- 사용자가 이미 답했거나 저장소에 명시된 질문을 다시 묻지 않는다.
+- 정말 필요한 컨텍스트가 없고 그 누락이 의사결정/정확도에 materially 영향을 줄 때만 질문한다.
+- 사용자가 “자동으로 계속 진행”을 요청한 상태라면, 비차단 가정은 명시적으로 기록하고 진행한다.
+- 현재 설계와 충돌하는 새 결정을 내리면 기존 결정을 조용히 덮지 말고 `CHANGE_LOG.md`에 위치/이유/영향/rollback을 남긴다.
+- 구현 허가가 없는 상태에서 구현으로 넘어가지 않는다.
 
 ## 1. Project Intent
 
@@ -11,7 +23,7 @@ Civilization X-Ray는 단순한 세계 건축물 소개 채널이나 AI 영상 �
 
 > **인류가 만든 거대한 구조·도시·인프라·역사 기술의 보이지 않는 원리를, 정교한 3D 해부형 시각언어와 롱폼 스토리텔링으로 설명한다.**
 
-대상 영역은 건축, 도시, 토목, 교통, 역사 공학, 문명 인프라까지 열어 두되, 최종 범위와 우선순위는 Discovery에서 확정한다.
+대상 영역은 건축, 도시, 토목, 교통, 역사 공학, 문명 인프라까지 열어 두되, 실제 episode 선택은 현재 정본의 콘텐츠 포지셔닝/스코어 규칙을 따른다.
 
 ## 2. Non-Negotiable Working Rules
 
@@ -23,6 +35,8 @@ Civilization X-Ray는 단순한 세계 건축물 소개 채널이나 AI 영상 �
 2. **User interview before architecture lock**
    - 사용자의 의도, 주사용자/시청자, 성공조건, 품질 기준, 자동화 수준, 비용/속도/정확도 우선순위를 확인한다.
    - 중요한 질문은 한 번에 몰아 묻지 않고, 의사결정에 필요한 순서대로 진행한다.
+   - 단, 이미 대화나 정본 문서에서 답이 확인되는 질문은 반복하지 않는다.
+   - 질문 없이 합리적으로 진행 가능한 비차단 항목은 가정을 명시하고 진행하며, 중요한 가정은 검증 항목으로 남긴다.
 
 3. **Blind-spot sweep is mandatory**
    - 아이디어가 좋아 보인다는 이유로 바로 설계 확정하지 않는다.
@@ -35,11 +49,13 @@ Civilization X-Ray는 단순한 세계 건축물 소개 채널이나 AI 영상 �
 5. **Four alternatives at consequential design decisions**
    - 채널 포지셔닝, 비주얼 언어, 제작 파이프라인, 하네스 구조처럼 중요한 결정은 가능하면 4개 시안을 한눈에 비교한다.
    - 하나의 안을 처음부터 정답처럼 밀지 않는다.
+   - 4안 비교가 형식적 중복만 만들 경우 그 이유를 기록하고 생략할 수 있다.
 
 6. **Reference-first, not imitation-first**
    - 유사 프로젝트, 오픈소스, 영상/스크립트 본보기를 조사한다.
    - 표면적 복제가 아니라 반복 가능한 원리, 인터페이스, 평가법을 추출한다.
    - 레퍼런스의 라이선스·출처·차용 범위를 기록한다.
+   - 소프트웨어 작업에서는 유사 GitHub 코드/하네스를 참고하고, 콘텐츠 작업에서는 유사 영상/대본/제작 문법을 참고한다. 소설 프로젝트라면 “본보기 코드”에 해당하는 것은 유사 장르 작품/구조 분석으로 치환한다.
 
 7. **Record deviations**
    - 원래 계획과 달라졌다면 반드시 다음을 남긴다.
@@ -57,14 +73,20 @@ Civilization X-Ray는 단순한 세계 건축물 소개 채널이나 AI 영상 �
 
 AI에게 바로 결과물을 시키지 말고, 필요한 경우 AI가 AI용 프롬프트를 설계하게 한다.
 
+기본 사이클:
+
+`Context Dump → Missing Context Check → Prompt Refinement → Execute → Output Review → Learn`
+
 ### 3.1 Context Dump
 - 목표, 현재 결정, 금지사항, 참고자료, 입력/출력, 실행환경, 실패 사례를 먼저 충분히 제공한다.
 
-### 3.2 Prompt Refinement
-- AI에게 다음을 질문하게 한다.
+### 3.2 Missing Context / Prompt Refinement
+- AI에게 다음을 먼저 내부적으로 점검하게 한다.
   - 좋은 결과를 위해 어떤 컨텍스트가 더 필요한가?
   - 어떤 부분이 모호한가?
   - 어떤 가정을 하고 있는가?
+- 필요한 컨텍스트가 이미 저장소/대화에 있으면 사용한다. 사용자에게 재질문하지 않는다.
+- 정말 누락된 정보가 성공조건을 materially 바꾸는 경우에만 사용자에게 질문한다.
 - 불필요한 지시, 중복, 충돌을 깎아낸다.
 
 ### 3.3 Success Criteria
@@ -78,11 +100,24 @@ AI에게 바로 결과물을 시키지 말고, 필요한 경우 AI가 AI용 프�
 - 최종 결과물은 사람이 다시 해석하지 않아도 다음 단계 입력으로 사용 가능하다.
 
 ### 3.4 Environment-Specific Prompt Conversion
-- Goal prompt: 목표와 중지 조건을 명시한다.
-- Agent/ultracode prompt: 제약, 파일 범위, 변경 금지 영역, 검증 명령을 명시한다.
+- Goal prompt: 목표와 **중지 조건**을 명시한다.
+- Agent/ultracode prompt: 제약, 파일 범위, 변경 금지 영역, 검증 명령, 완료 증거를 명시한다.
 - Image prompt: 구도, 피사체, 구조, 재질, 스타일, 조명, 렌즈/카메라 방향, continuity key를 명시한다.
-- Video prompt: 시작 상태, 종료 상태, 카메라 경로, 움직이면 안 되는 요소, 물리/구조 변화, shot duration을 명시한다.
+- Video prompt: 시작 상태, 종료 상태, 카메라 경로, 움직이면 안 되는 요소, 물리/구조 변화, shot duration, continuity bridge를 명시한다.
 - Research prompt: 조사 범위, 허용 출처, 1차/2차 출처 우선순위, 상충 자료 처리, 검증 방식을 명시한다.
+
+### 3.5 Output Review
+결과물은 생성 직후 바로 통과시키지 않는다.
+
+최소 점검:
+- 성공조건을 실제로 충족했는가?
+- 입력/출력 계약을 지켰는가?
+- 근거 없는 완료 주장이나 가정이 섞였는가?
+- 이전 정본/하드락/권리/팩트와 충돌하는가?
+- 다음 단계가 재해석 없이 사용할 수 있는가?
+- 실패했다면 무엇이 원인이며 어떤 causal input을 바꿔 재시도할 것인가?
+
+검수 결과는 PASS/REVISE/REJECT/ESCALATE 중 하나로 명시한다.
 
 ## 4. Required Discovery Flow
 
@@ -104,6 +139,8 @@ AI에게 바로 결과물을 시키지 말고, 필요한 경우 AI가 AI용 프�
 14. User approval
 15. Implementation plan
 16. **Only then implementation**
+
+현재 프로젝트는 위의 1~13 및 Validation 0.5 설계 검증까지 완료된 상태다. 이 목록을 새 세션에서 기계적으로 처음부터 재수행하지 않는다.
 
 ## 5. Harness Is a First-Class Design Artifact
 
@@ -146,6 +183,8 @@ Civilization X-Ray에서 harness는 최소 다음을 정의해야 한다.
 
 조건이 부족하면 `HARNESS_DESIGN`으로 넘어가지 말고 Discovery로 돌아간다.
 
+현재 harness topology는 Validation 0.5에서 확인되었으며, 새 근거가 있을 때만 변경한다.
+
 ## 6. Content-Specific Quality Principles
 
 1. **Question-first**: 장소 소개보다 “왜/어떻게 가능한가?”를 우선한다.
@@ -164,15 +203,17 @@ Civilization X-Ray에서 harness는 최소 다음을 정의해야 한다.
 - `multica-ai/andrej-karpathy-skills`
 - `bradautomates/claude-video`
 - `obra/superpowers`
-- `Lum1104/Understand-Anything` 및 현재 계보
+- `Lum1104/Understand-Anything`의 현재 계보인 `Egonex-AI/Understand-Anything`
 - `rohitg00/agentmemory`
 
 이들은 복사 대상이 아니라 각각 다음 질문의 본보기다.
-- 어떻게 가정과 범위를 통제하는가?
-- 어떻게 구현 전 설계를 강제하는가?
-- 어떻게 영상의 음성/화면을 함께 분석하는가?
-- 어떻게 복잡한 시스템을 구조적으로 이해시키는가?
-- 어떻게 장기 기억과 실패 학습을 유지하는가?
+- Karpathy Guidelines: 어떻게 가정과 범위를 통제하고 단순성을 유지하는가?
+- Superpowers: 어떻게 구현 전 설계/승인/검증을 강제하는가?
+- claude-video: 어떻게 영상의 transcript와 frame/scene을 함께 분석하는가?
+- Understand-Anything: 어떻게 복잡한 시스템을 관계/의존성으로 구조화하는가?
+- agentmemory: 어떻게 장기 기억과 실패 학습을 유지하는가?
+
+상세 적용/비적용 기준은 `docs/00-project/REFERENCE_METHODS.md`를 따른다.
 
 ## 8. Change Protocol
 
@@ -188,21 +229,25 @@ Civilization X-Ray에서 harness는 최소 다음을 정의해야 한다.
 - Reversible? / rollback path
 - Files or stages affected
 
-## 9. Current Stop Condition
+## 9. Current Boundary / Stop Condition
 
-현재 Phase 0의 종료 조건은 **코드가 동작하는 것**이 아니다.
+현재 프로젝트는 **초기 브레인스토밍과 architecture design은 완료**되었다.
+`docs/09-validation/VALIDATION_0_5_FINAL.md` 기준:
+- Strategic design: PASS
+- Content system: PASS
+- Script system: PASS
+- Visual architecture: PASS with refinements
+- Risk / pre-mortem: PASS
+- Harness architecture: PASS
+- Artifact design: PASS after simplification
+- Reference frame-level empirical analysis: **PARTIAL**
+- Implementation: **NOT STARTED**
 
-다음이 충족되어야 한다.
-- 프로젝트 인터뷰 핵심 질문이 닫힘
-- 레퍼런스 역설계 기준이 확정됨
-- 브레인스토밍 결과와 4개 대안이 비교됨
-- 맹점/함정 검토가 완료됨
-- 성공조건과 평가표가 작성됨
-- harness readiness gate를 통과함
-- 하네스 4안이 비교되고 권고안이 설계됨
-- 사용자가 written design을 승인함
+따라서 다음 합법적 작업은 둘 중 하나다.
+1. 더 깊은 no-code benchmark 분석 / full-studio paper run / 설계 정리
+2. 사용자가 명시적으로 구현을 승인한 경우에만 최소 Phase 1 구현 계획
 
-그 전까지 구현하지 않는다.
+명시적 구현 승인 전에는 구현하지 않는다.
 
 ## 10. Visual Production Agent Hierarchy
 
