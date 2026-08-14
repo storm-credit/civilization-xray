@@ -113,3 +113,15 @@
 - Rollback path: Promote human modeling or another deterministic DCC path if pilot evidence shows procedural Blender is insufficient.
 - Affected stages/files: `docs/05-visual/MODELING_CAMERA_RENDER_ROUTER.md`, future Phase 1 planning.
 - Follow-up validation: Compare procedural/existing/AI/human paths on aqueduct, Venetian foundation and ornate cathedral asset classes before implementation lock.
+
+## 2026-08-14 — Hierarchical production agents fixed as explicit responsibilities
+
+- Previous decision / assumption: Harness logical capabilities were defined, but production execution remained a flat capability map without a concrete director/specialist hierarchy.
+- New decision: Introduce a production hierarchy with Project Orchestrator above Video Director, and Blender Spatial & Camera Specialist plus Veo Cinematic Camera Specialist under the Video Director. Independent Visual QA retains reject authority. 2D Motion / Compositing remains a logical capability that may split into a physical agent later.
+- Trigger / evidence: User explicitly requested a Blender expert agent, a Veo camera expert, a Video Director supervising them, and a total Project Orchestrator above the director.
+- Why changed: Make ownership, routing, handoff and failure recovery operationally explicit while preserving the Stage-Gated Artifact Blackboard architecture.
+- Impact: production work orders, context packets, prompt templates, QA independence, future runtime topology.
+- Reversible?: Yes at the physical-process level; responsibility boundaries should remain unless pilot evidence contradicts them.
+- Rollback path: Merge physical agents to reduce runtime overhead while preserving separate role contracts and verdict artifacts.
+- Affected stages/files: `docs/02-harness/AGENT_HIERARCHY_V1.md`, `docs/02-harness/agents/*`, `docs/08-prompts/PRODUCTION_AGENT_PROMPT_BLUEPRINTS.md`.
+- Follow-up validation: Run one episode as a paper orchestration simulation and measure handoff clarity, duplicated context and retry routing before implementation.
