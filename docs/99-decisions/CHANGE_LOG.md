@@ -101,3 +101,15 @@
 - Rollback path: Remove only if no engineering visuals require scale transformation.
 - Affected stages/files: `docs/09-validation/PAPER_WALKTHROUGHS.md`, `docs/09-validation/VALIDATION_0_5_FINAL.md`.
 - Follow-up validation: Test with elevation/angle examples.
+
+## 2026-08-14 — Blender-first modeling and deterministic camera backbone
+
+- Previous decision / assumption: Production design distinguished geometry-backed vs generative visuals but did not specify how models and camera motion would actually be acquired without a dedicated modeler.
+- New decision: Use a four-path Model Acquisition Router: M0 no-3D/2D, M1 procedural-parametric Blender geometry as default, M2 approved existing assets, M3 verified AI image-to-3D seed, M4 human modeler as exception. Deterministic explanatory camera moves use a planned reusable Blender camera-rig vocabulary. Higgsfield is not a mandatory dependency.
+- Trigger / evidence: User identified paid Higgsfield cost and uncertainty about who would create 3D models. Blender supports programmatic animation, while current AI 3D tools can provide candidate meshes but require accuracy/license review.
+- Why changed: Remove the hidden assumption that a full-time 3D artist is required and make camera/model production routable by explanatory need.
+- Impact: Visual system, Production Pack, Spatial/Asset Bible, future model/tool registry, cost model.
+- Reversible?: Yes.
+- Rollback path: Promote human modeling or another deterministic DCC path if pilot evidence shows procedural Blender is insufficient.
+- Affected stages/files: `docs/05-visual/MODELING_CAMERA_RENDER_ROUTER.md`, future Phase 1 planning.
+- Follow-up validation: Compare procedural/existing/AI/human paths on aqueduct, Venetian foundation and ornate cathedral asset classes before implementation lock.
