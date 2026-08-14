@@ -4,25 +4,24 @@
 
 ## Current Status
 
-**Phase 0 — Design: complete**  
-**Validation 0.5 — Paper/harness validation: complete; frame-level reference corpus remains pending direct media access**  
-**Implementation: not started / intentionally blocked**
+**Phase 0 — Architecture Design: complete**  
+**Validation 0.5 — Harness/artifact validation: complete**  
+**Design Closure 0.6 — end-to-end contract validation: complete**  
+**10-video frame-level benchmark corpus: partial / pending direct media access**  
+**Implementation: not started / intentionally blocked until explicit authorization**
 
-No-code validation completed:
-1. 3 representative episode paper walkthroughs
-2. artifact/harness overengineering review
-3. 12 logical artifacts → 7 default physical core artifacts for Phase 1
-4. Hero Object model → Spatial / Asset Bible (`object | system | component`)
-5. continuity expanded to object / spatial / semantic / temporal
-6. scale treatment metadata added
-7. 2D diagram/motion graphics promoted to first-class explanatory capabilities
-8. Blender-first model acquisition + deterministic camera/render router designed
-9. validation-driven changes recorded in `CHANGE_LOG.md`
+Closure 0.6 completed:
+1. 7 physical core artifacts now have field-level contracts
+2. camera/transition grammar locked for Phase 1 planning
+3. Audio/Post timeline contract locked
+4. `VX-PILOT-001 Venice Foundations` ran end-to-end through all four orchestras on paper
+5. factual-scope and wording-only change fault injections validated field-aware stale propagation
+6. 32 narration units compressed to 15 visual work orders rather than one video per sentence
+7. one reusable Blender explanatory module + 2D can carry the pilot’s central mechanism
+8. Veo remains optional cinematic context, not a factual-geometry dependency
+9. no fifth creative orchestra, eighth default core artifact, or full-time modeler is justified before prototype evidence
 
-Still pending before/alongside implementation planning when media access is available:
-- actual 10-video timestamp transcript + frame reverse-engineering corpus
-
-This remaining empirical work may refine script/camera grammar, but does not change the selected harness topology unless evidence contradicts the current design.
+Architecture/contract design is now **closed**. Remaining uncertainty is empirical, not another missing design layer.
 
 ## Core Direction
 
@@ -44,21 +43,9 @@ This remaining empirical work may refine script/camera grammar, but does not cha
 
 **Stage-Gated Artifact Blackboard + Thin Director**
 
-하네스는 에이전트 숫자로 정의하지 않는다.
+하네스는 에이전트 숫자로 정의하지 않는다. responsibility / artifact / state / provenance / gate / retry / rollback / memory / budget을 먼저 정의하고, 실제 physical agent 수와 기술은 구현 단계에서 최소한으로 결정한다.
 
-먼저:
-- responsibility
-- artifact
-- state
-- provenance
-- gate
-- retry / rollback
-- memory
-- budget
-
-를 정의하고, 실제 agent 수와 기술은 구현 단계에서 최소한으로 결정한다.
-
-### Phase 1 default core artifacts
+### Phase 1 default core artifacts — field-tested in Closure 0.6
 1. Episode Brief
 2. Evidence Pack
 3. Story Pack
@@ -67,42 +54,69 @@ This remaining empirical work may refine script/camera grammar, but does not cha
 6. Production Pack
 7. Review & Run Ledger
 
-Logical concepts may remain more granular internally; physical files/artifacts are split only when complexity requires it.
+Logical concepts may remain more granular internally; physical files/artifacts are split only when actual complexity requires it.
+
+## Studio Architecture
+
+```text
+Project Orchestrator
+│
+├─ Editorial & Research Orchestra
+├─ Visual Production Orchestra
+├─ Audio & Post Orchestra
+└─ Release & Learning Orchestra
+
+Cross-cutting:
+├─ Fact / Rights / Quality Governance
+└─ Shared Asset & Memory Service
+```
+
+Visual production baseline:
+- Blender: deterministic spatial truth / registered camera / cutaway / explode / reassembly
+- 2D: maps / diagrams / elevation / causal explanation
+- Veo/Google video: cinematic reconstruction / people / atmosphere / bridge shots
+- Human modeler: escalation path only
+- Higgsfield: not a required dependency
 
 ## Design Entry Points
 
-### Project Rules
+### Current truth / handoff
 - [`CLAUDE.md`](CLAUDE.md)
-- [`docs/00-project/PROJECT_CHARTER.md`](docs/00-project/PROJECT_CHARTER.md)
+- [`docs/00-project/CLAUDE_HANDOFF.md`](docs/00-project/CLAUDE_HANDOFF.md)
+- [`docs/11-design-closure/DESIGN_CLOSURE_0_6_FINAL.md`](docs/11-design-closure/DESIGN_CLOSURE_0_6_FINAL.md)
+
+### Closure 0.6 contracts
+- [`docs/11-design-closure/CORE_ARTIFACT_CONTRACTS_V1.md`](docs/11-design-closure/CORE_ARTIFACT_CONTRACTS_V1.md)
+- [`docs/11-design-closure/CAMERA_TRANSITION_GRAMMAR_V1.md`](docs/11-design-closure/CAMERA_TRANSITION_GRAMMAR_V1.md)
+- [`docs/11-design-closure/AUDIO_TIMELINE_CONTRACT_V1.md`](docs/11-design-closure/AUDIO_TIMELINE_CONTRACT_V1.md)
+- [`docs/11-design-closure/pilot-venice/`](docs/11-design-closure/pilot-venice/)
+
+### Foundation design
 - [`docs/00-project/FINAL_DESIGN_BLUEPRINT.md`](docs/00-project/FINAL_DESIGN_BLUEPRINT.md)
+- [`docs/00-project/PROJECT_CHARTER.md`](docs/00-project/PROJECT_CHARTER.md)
+- [`docs/09-validation/VALIDATION_0_5_FINAL.md`](docs/09-validation/VALIDATION_0_5_FINAL.md)
 
 ### Discovery / Risks
 - [`docs/01-discovery/PHASE0_DECISIONS.md`](docs/01-discovery/PHASE0_DECISIONS.md)
 - [`docs/01-discovery/REFERENCE_REVERSE_ENGINEERING.md`](docs/01-discovery/REFERENCE_REVERSE_ENGINEERING.md)
 - [`docs/01-discovery/BLIND_SPOT_SWEEP.md`](docs/01-discovery/BLIND_SPOT_SWEEP.md)
+- [`docs/01-discovery/FULL_STUDIO_BLIND_SPOT_SWEEP.md`](docs/01-discovery/FULL_STUDIO_BLIND_SPOT_SWEEP.md)
 - [`docs/01-discovery/RISK_REGISTER.md`](docs/01-discovery/RISK_REGISTER.md)
 
 ### Harness
 - [`docs/02-harness/HARNESS_DESIGN_POLICY.md`](docs/02-harness/HARNESS_DESIGN_POLICY.md)
-- [`docs/02-harness/HARNESS_READINESS_REVIEW.md`](docs/02-harness/HARNESS_READINESS_REVIEW.md)
 - [`docs/02-harness/HARNESS_ARCHITECTURE.md`](docs/02-harness/HARNESS_ARCHITECTURE.md)
+- [`docs/02-harness/STUDIO_ORCHESTRATION_V2.md`](docs/02-harness/STUDIO_ORCHESTRATION_V2.md)
 
-### Content / Script / Visual
+### Content / Script / Visual / Audio
 - [`docs/03-content/CONTENT_SYSTEM.md`](docs/03-content/CONTENT_SYSTEM.md)
 - [`docs/04-script/SCRIPT_VISUAL_GRAMMAR.md`](docs/04-script/SCRIPT_VISUAL_GRAMMAR.md)
-- [`docs/05-visual/VISUAL_SYSTEM.md`](docs/05-visual/VISUAL_SYSTEM.md)
 - [`docs/05-visual/MODELING_CAMERA_RENDER_ROUTER.md`](docs/05-visual/MODELING_CAMERA_RENDER_ROUTER.md)
+- [`docs/06-production/AUDIO_POST_SYSTEM.md`](docs/06-production/AUDIO_POST_SYSTEM.md)
 
-### Production / Quality / Prompts
-- [`docs/06-production/PRODUCTION_SYSTEM.md`](docs/06-production/PRODUCTION_SYSTEM.md)
-- [`docs/07-quality/QUALITY_SCORECARD.md`](docs/07-quality/QUALITY_SCORECARD.md)
-- [`docs/08-prompts/META_PROMPT_SYSTEM.md`](docs/08-prompts/META_PROMPT_SYSTEM.md)
-
-### Validation 0.5
-- [`docs/09-validation/PAPER_WALKTHROUGHS.md`](docs/09-validation/PAPER_WALKTHROUGHS.md)
-- [`docs/09-validation/ARTIFACT_PRUNING_REVIEW.md`](docs/09-validation/ARTIFACT_PRUNING_REVIEW.md)
-- [`docs/09-validation/REFERENCE_DESK_VALIDATION.md`](docs/09-validation/REFERENCE_DESK_VALIDATION.md)
-- [`docs/09-validation/VALIDATION_0_5_FINAL.md`](docs/09-validation/VALIDATION_0_5_FINAL.md)
+### Reuse audits
+- [`docs/10-reuse/ASKANYTHING_REUSE_AUDIT.md`](docs/10-reuse/ASKANYTHING_REUSE_AUDIT.md)
+- [`docs/10-reuse/ODDENGINE_REUSE_AUDIT.md`](docs/10-reuse/ODDENGINE_REUSE_AUDIT.md)
 
 ### Decisions
 - [`docs/99-decisions/CHANGE_LOG.md`](docs/99-decisions/CHANGE_LOG.md)
@@ -111,9 +125,9 @@ Logical concepts may remain more granular internally; physical files/artifacts a
 
 - Design before implementation
 - Context dump before prompting
-- Ask for missing context or record reversible assumptions
+- Ask only for truly missing context; do not repeat answered questions
 - Four alternatives for consequential design decisions
-- Blind-spot sweep and pre-mortem before architecture lock
+- Blind-spot sweep and pre-mortem before architecture/implementation lock
 - Evidence before completion claims
 - Script ↔ Visual alignment over decorative AI footage
 - Geometry when topology is explanatory evidence
@@ -122,7 +136,10 @@ Logical concepts may remain more granular internally; physical files/artifacts a
 - Human modeler is an escalation path, not a baseline dependency
 - Cheap reasoning first, expensive pixels last
 - Source → claim → script → visual provenance
-- Record where/why plans changed and their impact
+- field-aware stale propagation instead of whole-episode regeneration
+- representative technique must not silently become universal truth
+- narration unit count must not become generation count
+- record where/why plans changed and their impact
 
 ## References
 
@@ -134,6 +151,20 @@ Methodological references currently studied:
 - `rohitg00/agentmemory`
 
 These are references for workflow and reasoning patterns, not code to copy wholesale.
+
+## Next Boundary
+
+Without implementation authorization, allowed work is limited to empirical no-code refinement such as:
+- direct benchmark transcript+frame analysis
+- source/rights research
+- current official provider capability validation
+- a genuinely new mechanism-class paper test only if it exposes a contract failure
+
+When the user explicitly authorizes implementation, the next step is:
+
+> **Phase 1 Minimal Supervised Prototype implementation plan**
+
+Do not start with a full autonomous agent platform, UI, vector DB, deployment stack, or every specialist as a separate physical process.
 
 ## Implementation Lock
 
