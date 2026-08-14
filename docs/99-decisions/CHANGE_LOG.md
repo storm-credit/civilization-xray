@@ -137,3 +137,15 @@
 - Rollback path: Combine physical agents/directors while preserving contracts; do not delete governance/review dimensions solely to reduce agent count.
 - Affected stages/files: `CLAUDE.md`, `docs/01-discovery/FULL_STUDIO_BLIND_SPOT_SWEEP.md`, `docs/02-harness/STUDIO_ORCHESTRATION_V2.md`, `docs/02-harness/orchestras/*`, `docs/02-harness/GOVERNANCE_AND_SHARED_SERVICES.md`, `docs/06-production/AUDIO_POST_SYSTEM.md`, `docs/08-prompts/STUDIO_AGENT_PROMPT_BLUEPRINTS.md`.
 - Follow-up validation: Paper-run one complete episode through Editorial → Visual → Audio/Post → Release, including a script revision after scratch voice, and measure stale propagation, coordination overhead, audio rights burden, and final QA clarity.
+
+## 2026-08-14 — Reuse AskAnything provider infrastructure, not Shorts policy
+
+- Previous decision / assumption: Civilization X-Ray would later implement Google/Veo provider infrastructure behind its own adapter, with no committed source-reuse boundary.
+- New decision: Treat `storm-credit/askanything_video_generator` as an internal implementation reference and Phase 1 extraction source for Google client creation, Veo request/poll/download/retry behavior, quota/provider-health patterns, media normalization, bounded concurrency/cache and cost-accounting patterns. Do not inherit Shorts emotion/format routing, fixed 8-second 9:16 generation, preset Blender topic routing, or silent provider fallback.
+- Trigger / evidence: Repository audit found mature Veo operational handling plus AI Studio/Vertex switching, multi-SA handling, model chains, existing-output reuse, cost tracking and headless Blender execution patterns.
+- Why changed: Reusing proven transport/operations reduces implementation risk while preserving Civilization X-Ray's distinct long-form evidence → spatial truth → shot contract → QA architecture.
+- Impact: Phase 1 implementation extraction order, Google Video Adapter contract, Generation Manifest, Provider Health/Quota Service, cache/stale rules and cost observability.
+- Reversible?: Yes. Any source component may be reimplemented if extraction creates coupling or stale assumptions.
+- Rollback path: Preserve the documented interfaces and replace the implementation behind them.
+- Affected stages/files: `docs/10-reuse/ASKANYTHING_REUSE_AUDIT.md`, future Phase 1 implementation plan.
+- Follow-up validation: Before code extraction, verify current Google SDK/model capabilities and paper-map one Veo shot from Shot Spec through Generation Manifest and Visual QA.
