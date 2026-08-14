@@ -161,3 +161,15 @@
 - Rollback path: Keep the existing Stage-Gated Artifact Blackboard and remove the added bridge/material-integrity requirements while preserving artifact lineage.
 - Affected stages/files: `docs/10-reuse/ODDENGINE_REUSE_AUDIT.md`, `docs/02-harness/agents/VEO_CAMERA_SPECIALIST.md`, future Phase 1 gate implementation.
 - Follow-up validation: Paper-run one continuity-sensitive Veo/Blender hybrid shot and one downstream gate with intentionally missing/stale artifacts to confirm failures are caught before expensive production.
+
+## 2026-08-15 — Design Closure 0.6 locks the contracts and stops architecture expansion
+
+- Previous decision / assumption: Phase 0 architecture and Validation 0.5 were complete, but 7 core artifacts, camera/transition grammar, Audio/Post timing, full-studio handoff and stale propagation still needed one end-to-end paper validation before declaring design truly closed.
+- New decision: Close architecture/contract design after `VX-PILOT-001 Venice Foundations` successfully traversed all four orchestras using the 7 physical artifacts. Adopt Core Artifact Contracts v1, Camera & Transition Grammar v1, Audio/Post Timeline Contract v1 and field-aware stale propagation. No eighth default core artifact or fifth creative orchestra is justified. Veo remains optional for pilot truth; one reusable Blender explanatory module + 2D can carry the central mechanism.
+- Trigger / evidence: The Venice paper run populated all seven artifacts, compressed 32 narration units into 15 visual work orders, routed the central explanation through deterministic Blender/2D, tested a historical Veo continuity bridge, performed audio/post/release paper assembly, and injected both a factual-scope change and a wording-only script change. The dependency model selectively invalidated affected assets without forcing unrelated regeneration.
+- Why changed: The remaining uncertainty is now empirical (actual Blender readability/render performance, Veo behavior/cost, TTS/music quality, benchmark frame DNA), not a missing architecture layer. Continuing to add agents/orchestras/artifacts would be documentation-driven overengineering.
+- Impact: `CLAUDE.md` and Claude handoff now treat architecture as CLOSED for Phase 1 planning; future work must not reopen it without new evidence. Phase 1 implementation, if explicitly authorized, should start with a Minimal Supervised Prototype rather than full autonomous infrastructure.
+- Reversible?: Yes, but only with pilot/prototype evidence showing a concrete responsibility/context/authority failure.
+- Rollback path: Reopen the specific failed contract, not the whole architecture; document the triggering pilot evidence and affected artifacts.
+- Affected stages/files: `docs/11-design-closure/*`, `docs/11-design-closure/pilot-venice/*`, `CLAUDE.md`, `docs/00-project/CLAUDE_HANDOFF.md`, future Phase 1 implementation plan.
+- Follow-up validation: Complete the 10-video frame+transcript benchmark when direct media access is available; during Phase 1 measure actual spatial readability, stale executor behavior, Veo/TTS/music cost/quality and only then tune thresholds or split roles.
