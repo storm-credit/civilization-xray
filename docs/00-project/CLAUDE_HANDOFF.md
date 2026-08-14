@@ -10,7 +10,8 @@ This document exists so a new Claude / Claude Code session can continue without 
 - Default branch: `main`
 - Project type: long-form documentary/explainer production system
 - Current implementation state: **NOT STARTED**
-- Current design state: **Phase 0 architecture + Validation 0.5 design validation complete**
+- Current design state: **Phase 0 architecture + Validation 0.5 + Design Closure 0.6 complete**
+- Closure pilot: **VX-PILOT-001 Venice Foundations end-to-end paper run PASS**
 - Remaining empirical benchmark state: **frame-level 10-video benchmark analysis PARTIAL**
 
 ## 2. First Read Order
@@ -18,19 +19,32 @@ This document exists so a new Claude / Claude Code session can continue without 
 Before making decisions, read these files in order:
 
 1. `CLAUDE.md`
-2. `docs/00-project/FINAL_DESIGN_BLUEPRINT.md`
-3. `docs/09-validation/VALIDATION_0_5_FINAL.md`
-4. `docs/02-harness/STUDIO_ORCHESTRATION_V2.md`
-5. `docs/02-harness/HARNESS_ARCHITECTURE.md`
-6. `docs/03-content/CONTENT_SYSTEM.md`
-7. `docs/04-script/SCRIPT_VISUAL_GRAMMAR.md`
-8. `docs/05-visual/MODELING_CAMERA_RENDER_ROUTER.md`
-9. `docs/06-production/AUDIO_POST_SYSTEM.md`
-10. `docs/01-discovery/FULL_STUDIO_BLIND_SPOT_SWEEP.md`
-11. `docs/10-reuse/ASKANYTHING_REUSE_AUDIT.md`
-12. `docs/10-reuse/ODDENGINE_REUSE_AUDIT.md`
-13. `docs/00-project/REFERENCE_METHODS.md`
-14. `docs/99-decisions/CHANGE_LOG.md`
+2. `docs/11-design-closure/DESIGN_CLOSURE_0_6_FINAL.md`
+3. `docs/11-design-closure/CORE_ARTIFACT_CONTRACTS_V1.md`
+4. `docs/11-design-closure/CAMERA_TRANSITION_GRAMMAR_V1.md`
+5. `docs/11-design-closure/AUDIO_TIMELINE_CONTRACT_V1.md`
+6. `docs/00-project/FINAL_DESIGN_BLUEPRINT.md`
+7. `docs/09-validation/VALIDATION_0_5_FINAL.md`
+8. `docs/02-harness/STUDIO_ORCHESTRATION_V2.md`
+9. `docs/02-harness/HARNESS_ARCHITECTURE.md`
+10. `docs/03-content/CONTENT_SYSTEM.md`
+11. `docs/04-script/SCRIPT_VISUAL_GRAMMAR.md`
+12. `docs/05-visual/MODELING_CAMERA_RENDER_ROUTER.md`
+13. `docs/06-production/AUDIO_POST_SYSTEM.md`
+14. `docs/01-discovery/FULL_STUDIO_BLIND_SPOT_SWEEP.md`
+15. `docs/10-reuse/ASKANYTHING_REUSE_AUDIT.md`
+16. `docs/10-reuse/ODDENGINE_REUSE_AUDIT.md`
+17. `docs/00-project/REFERENCE_METHODS.md`
+18. `docs/99-decisions/CHANGE_LOG.md`
+
+Pilot example when contract behavior is unclear:
+- `docs/11-design-closure/pilot-venice/01_EPISODE_BRIEF.md`
+- `02_EVIDENCE_PACK.md`
+- `03_STORY_PACK.md`
+- `04_VISUAL_PLAN.md`
+- `05_SPATIAL_ASSET_BIBLE.md`
+- `06_PRODUCTION_PACK.md`
+- `07_REVIEW_RUN_LEDGER.md`
 
 If documents conflict, prefer the newest explicit addendum/decision and record consolidation work rather than silently choosing.
 
@@ -188,7 +202,7 @@ Selected topology:
 
 > **Stage-Gated Artifact Blackboard + Thin Director**
 
-Effective Phase 1 physical core artifacts after Validation 0.5:
+Effective Phase 1 physical core artifacts, now field-tested in Closure 0.6:
 1. Episode Brief
 2. Evidence Pack
 3. Story Pack
@@ -199,18 +213,32 @@ Effective Phase 1 physical core artifacts after Validation 0.5:
 
 Keep logical distinctions inside these artifacts; split new physical files only when complexity proves the need.
 
+Closure 0.6 additionally locks:
+- field-aware stale propagation
+- executable artifact-gate principle
+- Camera & Transition Grammar v1
+- Audio/Post Timeline Contract v1
+- narration-unit ≠ shot-count rule
+- representative-vs-universal qualifier as a visual/caption/release hard lock where relevant
+
 ## 10. Current No-Code Blind Spots / Remaining Work
 
-Architecture is considered complete, but the following are still valuable:
+Architecture/contract design is now considered closed. Remaining work is empirical rather than another architecture layer:
 
 - direct frame + timestamp transcript reverse-engineering of a 10-video benchmark corpus when media access permits
 - update observed camera/action frequencies from real benchmark evidence
-- one full-studio paper run through Editorial → Visual → Audio/Post → Release using the latest V2 contracts
-- stale/dependency propagation check after a deliberate script revision
-- verify executable-gate requirements for future Phase 1 artifacts
-- consolidate any stale Phase 0 wording that conflicts with Validation 0.5
+- source/rights research for actual publish-bound assets
+- tool capability registry refresh from current official docs when provider decisions are needed
+- additional paper episode only if it represents a genuinely new mechanism class and exposes a contract failure
 
-These may refine contracts but should not trigger wholesale architecture redesign without evidence.
+Already completed in Closure 0.6 and **do not repeat by default**:
+- full-studio end-to-end paper run
+- deliberate stale/dependency propagation fault injection
+- 7-artifact contract validation
+- camera/transition contract closure
+- Audio/Post timeline contract closure
+
+These results are recorded under `docs/11-design-closure/`.
 
 ## 11. Critical Stop Conditions
 
@@ -234,22 +262,20 @@ GitHub 저장소 `storm-credit/civilization-xray`의 현재 main을 기준으로
 중요: 이전 대화 내용을 추측하지 말고 저장소를 정본으로 읽어라.
 먼저 다음 파일을 반드시 확인해:
 - CLAUDE.md
+- docs/11-design-closure/DESIGN_CLOSURE_0_6_FINAL.md
+- docs/11-design-closure/CORE_ARTIFACT_CONTRACTS_V1.md
+- docs/11-design-closure/CAMERA_TRANSITION_GRAMMAR_V1.md
+- docs/11-design-closure/AUDIO_TIMELINE_CONTRACT_V1.md
 - docs/00-project/FINAL_DESIGN_BLUEPRINT.md
 - docs/09-validation/VALIDATION_0_5_FINAL.md
 - docs/02-harness/STUDIO_ORCHESTRATION_V2.md
 - docs/02-harness/HARNESS_ARCHITECTURE.md
-- docs/03-content/CONTENT_SYSTEM.md
-- docs/04-script/SCRIPT_VISUAL_GRAMMAR.md
-- docs/05-visual/MODELING_CAMERA_RENDER_ROUTER.md
-- docs/06-production/AUDIO_POST_SYSTEM.md
-- docs/01-discovery/FULL_STUDIO_BLIND_SPOT_SWEEP.md
 - docs/10-reuse/ASKANYTHING_REUSE_AUDIT.md
 - docs/10-reuse/ODDENGINE_REUSE_AUDIT.md
-- docs/00-project/REFERENCE_METHODS.md
 - docs/99-decisions/CHANGE_LOG.md
 - docs/00-project/CLAUDE_HANDOFF.md
 
-현재 상태는 Phase 0 architecture + Validation 0.5 설계 검증까지 완료됐고 구현은 시작하지 않았다.
+현재 상태는 Phase 0 architecture + Validation 0.5 + Design Closure 0.6까지 완료됐고, VX-PILOT-001 베네치아 end-to-end paper run도 PASS했다. 구현은 아직 시작하지 않았다.
 사용자가 별도로 구현을 명시 승인하기 전까지 코드/API/앱 스캐폴딩/자동화 구현을 하지 마라.
 
 작업 원칙:
@@ -281,11 +307,10 @@ Context Dump → Missing Context Check → Prompt Refinement → Execute → Out
 각각 docs/10-reuse의 audit 문서를 우선해라.
 
 첫 행동:
-A) 현재 main 상태와 위 문서들의 충돌/낡은 상태표시를 점검하고,
-B) 방금 나열한 작업 원칙이 실제 설계에 누락 없이 반영됐는지 compliance audit을 수행한 다음,
-C) 새로운 근거가 없는 한 기존 Stage-Gated Artifact Blackboard + Thin Director / 4-orchestra 구조를 유지하고,
-D) 남아 있는 no-code validation을 자동으로 계속 진행해라.
+A) 현재 main과 Closure 0.6 정본을 확인하고,
+B) Architecture를 다시 늘리지 말고 남은 empirical validation만 필요할 때 진행하며,
+C) 사용자가 구현을 승인하면 그때 `Phase 1 Minimal Supervised Prototype` 구현 계획부터 시작하고,
+D) 계획 변경 시 CHANGE_LOG.md에 위치/이유/영향/rollback을 기록해라.
 
-막히면 계획을 조용히 바꾸지 말고 CHANGE_LOG.md에 이유와 영향을 기록해라.
-계획만 말하고 멈추지 말고, 현재 허용된 no-code 설계/검증 범위 안에서는 실제 문서 수정·검수·커밋/PR까지 진행해라.
+구현 허가 전에는 계획만 핑계로 코드를 만들지 말고, 허용된 no-code 연구/검증이 있으면 실제 문서 수정·검수·PR까지 진행해라.
 ```
