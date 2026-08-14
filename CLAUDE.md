@@ -155,6 +155,8 @@ Civilization X-Ray에서 harness는 최소 다음을 정의해야 한다.
 5. **Long-form continuity**: 개별 멋진 컷보다 8–15분 이상 이어지는 정보·공간·스타일 연속성이 중요하다.
 6. **Fact/visual separation**: 역사적 사실, 공학적 추론, 시각적 재구성을 서로 구분한다.
 7. **No fake precision**: 자료에 없는 내부 구조를 사실처럼 단정하지 않는다.
+8. **Audio supports explanation**: narration이 정보 hierarchy의 최상위이며 음악/SFX는 의미·리듬·공간 이해를 지원한다.
+9. **Release package cannot escalate truth**: 제목/썸네일은 Evidence Pack이 허용하는 주장보다 강해질 수 없다.
 
 ## 7. Reference Principles
 
@@ -202,9 +204,9 @@ Civilization X-Ray에서 harness는 최소 다음을 정의해야 한다.
 
 그 전까지 구현하지 않는다.
 
-## 10. Production Agent Hierarchy v1
+## 10. Visual Production Agent Hierarchy
 
-Production 단계의 책임 계층은 다음을 기본값으로 한다.
+Visual Production의 책임 계층은 다음을 기본값으로 한다.
 
 ```text
 Project Orchestrator
@@ -217,7 +219,7 @@ Video Director
 Independent Visual QA
 ```
 
-상세 계약은 다음 문서를 따른다.
+상세 계약:
 - `docs/02-harness/AGENT_HIERARCHY_V1.md`
 - `docs/02-harness/agents/PROJECT_ORCHESTRATOR.md`
 - `docs/02-harness/agents/VIDEO_DIRECTOR.md`
@@ -226,7 +228,7 @@ Independent Visual QA
 - `docs/02-harness/agents/VISUAL_QA.md`
 - `docs/08-prompts/PRODUCTION_AGENT_PROMPT_BLUEPRINTS.md`
 
-### 10.1 Non-Negotiable Production Boundaries
+### 10.1 Non-Negotiable Visual Production Boundaries
 
 - Project Orchestrator는 project state/gate/budget/escalation을 소유하며 shot 미학을 직접 micromanage하지 않는다.
 - Video Director는 shot routing, camera language, transition, visual pacing을 소유한다.
@@ -248,3 +250,59 @@ Independent Visual QA
 - verdict artifact
 
 를 분리하여 역할 독립성을 보존한다.
+
+## 11. Full Studio Orchestration V2
+
+Civilization X-Ray의 studio-level 책임 구조는 다음 네 오케스트라를 기본값으로 한다.
+
+```text
+Project Orchestrator
+│
+├─ Editorial & Research Orchestra
+├─ Visual Production Orchestra
+├─ Audio & Post Orchestra
+└─ Release & Learning Orchestra
+
+Cross-cutting:
+├─ Fact / Rights / Quality Governance
+└─ Shared Asset & Memory Service
+```
+
+상세 기준:
+- `docs/01-discovery/FULL_STUDIO_BLIND_SPOT_SWEEP.md`
+- `docs/02-harness/STUDIO_ORCHESTRATION_V2.md`
+- `docs/02-harness/orchestras/EDITORIAL_RESEARCH_ORCHESTRA.md`
+- `docs/02-harness/orchestras/RELEASE_LEARNING_ORCHESTRA.md`
+- `docs/02-harness/GOVERNANCE_AND_SHARED_SERVICES.md`
+- `docs/06-production/AUDIO_POST_SYSTEM.md`
+- `docs/08-prompts/STUDIO_AGENT_PROMPT_BLUEPRINTS.md`
+
+### 11.1 Audio & Post Boundaries
+
+- Music은 별도 top-level orchestra가 아니라 Audio & Post Orchestra의 핵심 specialist responsibility다.
+- Post-Production Director가 final timeline/picture lock의 owner다.
+- Narration/TTS는 Voice Bible과 pronunciation glossary를 따른다.
+- Music Supervisor는 Audio Beat Map에 따라 cue를 설계하며 narration을 이기지 않는다.
+- Sound Design은 documented/plausible/illustrative/abstract truth class를 구분한다.
+- silence는 실패 상태가 아니라 의도된 audio state가 될 수 있다.
+- script 변경은 Voice/Caption/Edit/Music timing 등 영향을 받는 downstream artifact를 stale 처리해야 한다.
+- unresolved music/SFX/voice rights는 publish blocker다.
+
+### 11.2 Release & Learning Boundaries
+
+- title/thumbnail은 factual claim을 Evidence Pack보다 강화하지 않는다.
+- release package는 final fact/rights governance를 통과해야 한다.
+- 단일 에피소드 metric은 자동으로 Channel DNA가 되지 않는다.
+- analytics는 trust/accuracy constitution을 우회할 수 없다.
+
+### 11.3 Governance Independence
+
+- Claim Verifier와 최종 Fact/Rights verdict는 creator와 논리적으로 독립한다.
+- critical FAIL은 평균 점수로 상쇄하지 않는다.
+- creative director는 unresolved rights 또는 central factual failure를 강행 승인할 수 없다.
+
+### 11.4 No Additional Top-Level Orchestras by Default
+
+초기에는 music-only, thumbnail-only, analytics-only, Blender-only, prompt-only orchestra를 만들지 않는다.
+이들은 네 책임 오케스트라의 specialist 또는 shared service로 둔다.
+파일럿에서 책임 과부하가 실제로 증명될 때만 top-level orchestra를 추가한다.

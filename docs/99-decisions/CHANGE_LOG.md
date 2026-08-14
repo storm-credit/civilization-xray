@@ -125,3 +125,15 @@
 - Rollback path: Merge physical agents to reduce runtime overhead while preserving separate role contracts and verdict artifacts.
 - Affected stages/files: `docs/02-harness/AGENT_HIERARCHY_V1.md`, `docs/02-harness/agents/*`, `docs/08-prompts/PRODUCTION_AGENT_PROMPT_BLUEPRINTS.md`.
 - Follow-up validation: Run one episode as a paper orchestration simulation and measure handoff clarity, duplicated context and retry routing before implementation.
+
+## 2026-08-14 — Full studio expands to four responsibility orchestras
+
+- Previous decision / assumption: The concrete hierarchy was strongest on Visual Production while Editorial existed mostly as logical capabilities; audio/music/post/release responsibilities were embedded as production checklist items.
+- New decision: Use four top-level responsibility orchestras under Project Orchestrator: Editorial & Research, Visual Production, Audio & Post, Release & Learning. Add an independent Fact/Rights/Quality Governance plane and Shared Asset & Memory Service. Music remains a specialist responsibility inside Audio & Post, not its own orchestra.
+- Trigger / evidence: Full-studio blind-spot sweep identified missing ownership for narration/TTS, music, SFX, final picture edit, mix/master, captions, title/thumbnail/release packaging, post-publish learning, and cross-pipeline rights governance.
+- Why changed: A long-form studio is incomplete if it can generate good script/visual assets but cannot reliably assemble, sound, package, publish, and learn from a final master. Four domains close those responsibilities without creating 6+ top-level coordination units.
+- Impact: studio topology, stale dependency rules, audio/post artifacts, rights blockers, release gates, learning memory, CLAUDE.md.
+- Reversible?: Yes at physical-agent level. Responsibility domains should remain until pilot evidence proves they are too broad or unnecessary.
+- Rollback path: Combine physical agents/directors while preserving contracts; do not delete governance/review dimensions solely to reduce agent count.
+- Affected stages/files: `CLAUDE.md`, `docs/01-discovery/FULL_STUDIO_BLIND_SPOT_SWEEP.md`, `docs/02-harness/STUDIO_ORCHESTRATION_V2.md`, `docs/02-harness/orchestras/*`, `docs/02-harness/GOVERNANCE_AND_SHARED_SERVICES.md`, `docs/06-production/AUDIO_POST_SYSTEM.md`, `docs/08-prompts/STUDIO_AGENT_PROMPT_BLUEPRINTS.md`.
+- Follow-up validation: Paper-run one complete episode through Editorial → Visual → Audio/Post → Release, including a script revision after scratch voice, and measure stale propagation, coordination overhead, audio rights burden, and final QA clarity.
