@@ -149,3 +149,15 @@
 - Rollback path: Preserve the documented interfaces and replace the implementation behind them.
 - Affected stages/files: `docs/10-reuse/ASKANYTHING_REUSE_AUDIT.md`, future Phase 1 implementation plan.
 - Follow-up validation: Before code extraction, verify current Google SDK/model capabilities and paper-map one Veo shot from Shot Spec through Generation Manifest and Visual QA.
+
+## 2026-08-14 — Reuse OddEngine gate and continuity contracts only
+
+- Previous decision / assumption: Existing Civilization X-Ray Stage-Gated Artifact Blackboard and Veo specialist contracts were sufficient as design descriptions; OddEngine had not been audited as a reuse source.
+- New decision: Reuse only three OddEngine operational ideas: executable gates that verify real artifact integrity rather than status strings alone, explicit generated-shot continuity bridges, and durable prompt/reference provenance. Do not import OddEngine's MV ontology, 16-stage pipeline, character-centric continuity schema, fixed shot counts, model-routing matrix, animation tiers, dashboard/UI or track manifest as a second source of truth.
+- Trigger / evidence: Audit of `video-orchestrator`, continuity templates, Veo prompt director, manifest validator, `track_gates.py`, transition harness and pipeline status showed that the strongest non-duplicative value lies in concrete enforcement and handoff contracts rather than additional agents or orchestration layers.
+- Why changed: Civilization already has the stronger long-form/evidence architecture; selectively adopting OddEngine's executable validation closes implementation gaps without importing domain-specific complexity.
+- Impact: future Phase 1 gate executor, Veo specialist handoff, Generation Manifest prompt/reference reproducibility and override governance.
+- Reversible?: Yes. These contracts can be simplified if pilot evidence shows excessive overhead.
+- Rollback path: Keep the existing Stage-Gated Artifact Blackboard and remove the added bridge/material-integrity requirements while preserving artifact lineage.
+- Affected stages/files: `docs/10-reuse/ODDENGINE_REUSE_AUDIT.md`, `docs/02-harness/agents/VEO_CAMERA_SPECIALIST.md`, future Phase 1 gate implementation.
+- Follow-up validation: Paper-run one continuity-sensitive Veo/Blender hybrid shot and one downstream gate with intentionally missing/stale artifacts to confirm failures are caught before expensive production.
