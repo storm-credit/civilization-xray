@@ -4,16 +4,24 @@
 
 ## Current Status
 
-**Phase 0 — Design: architecture-level complete**  
+**Phase 0 — Design: complete**  
+**Validation 0.5 — Paper/harness validation: complete; frame-level reference corpus remains pending direct media access**  
 **Implementation: not started / intentionally blocked**
 
-다음 단계는 코딩이 아니라 **Validation 0.5**다.
+No-code validation completed:
+1. 3 representative episode paper walkthroughs
+2. artifact/harness overengineering review
+3. 12 logical artifacts → 7 default physical core artifacts for Phase 1
+4. Hero Object model → Spatial / Asset Bible (`object | system | component`)
+5. continuity expanded to object / spatial / semantic / temporal
+6. scale treatment metadata added
+7. 2D diagram/motion graphics promoted to first-class explanatory capabilities
+8. validation-driven changes recorded in `CHANGE_LOG.md`
 
-1. 실제 레퍼런스 롱폼 10편을 transcript + frames로 역설계
-2. 서로 다른 episode grammar 3개를 paper walkthrough
-3. artifact/harness 과설계 여부 재검토
-4. 변경점은 `docs/99-decisions/CHANGE_LOG.md`에 기록
-5. 검증 후에만 Phase 1 최소 구현 설계로 이동
+Still pending before/alongside implementation planning when media access is available:
+- actual 10-video timestamp transcript + frame reverse-engineering corpus
+
+This remaining empirical work may refine script/camera grammar, but does not change the selected harness topology unless evidence contradicts the current design.
 
 ## Core Direction
 
@@ -49,6 +57,17 @@
 
 를 정의하고, 실제 agent 수와 기술은 구현 단계에서 최소한으로 결정한다.
 
+### Phase 1 default core artifacts
+1. Episode Brief
+2. Evidence Pack
+3. Story Pack
+4. Visual Plan
+5. Spatial / Asset Bible
+6. Production Pack
+7. Review & Run Ledger
+
+Logical concepts may remain more granular internally; physical files/artifacts are split only when complexity requires it.
+
 ## Design Entry Points
 
 ### Project Rules
@@ -77,6 +96,12 @@
 - [`docs/07-quality/QUALITY_SCORECARD.md`](docs/07-quality/QUALITY_SCORECARD.md)
 - [`docs/08-prompts/META_PROMPT_SYSTEM.md`](docs/08-prompts/META_PROMPT_SYSTEM.md)
 
+### Validation 0.5
+- [`docs/09-validation/PAPER_WALKTHROUGHS.md`](docs/09-validation/PAPER_WALKTHROUGHS.md)
+- [`docs/09-validation/ARTIFACT_PRUNING_REVIEW.md`](docs/09-validation/ARTIFACT_PRUNING_REVIEW.md)
+- [`docs/09-validation/REFERENCE_DESK_VALIDATION.md`](docs/09-validation/REFERENCE_DESK_VALIDATION.md)
+- [`docs/09-validation/VALIDATION_0_5_FINAL.md`](docs/09-validation/VALIDATION_0_5_FINAL.md)
+
 ### Decisions
 - [`docs/99-decisions/CHANGE_LOG.md`](docs/99-decisions/CHANGE_LOG.md)
 
@@ -90,6 +115,7 @@
 - Evidence before completion claims
 - Script ↔ Visual alignment over decorative AI footage
 - Geometry when topology is explanatory evidence
+- 2D diagrams when they explain better than 3D
 - Cheap reasoning first, expensive pixels last
 - Source → claim → script → visual provenance
 - Record where/why plans changed and their impact
@@ -107,4 +133,4 @@ These are references for workflow and reasoning patterns, not code to copy whole
 
 ## Implementation Lock
 
-Do not add application code, automation code, API clients, agent-framework scaffolding, deployment configuration, or vendor-specific production integrations until the design validation gates have passed and implementation is explicitly authorized.
+Do not add application code, automation code, API clients, agent-framework scaffolding, deployment configuration, or vendor-specific production integrations until implementation is explicitly authorized.
