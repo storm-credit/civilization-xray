@@ -201,3 +201,50 @@ Civilization X-Ray에서 harness는 최소 다음을 정의해야 한다.
 - 사용자가 written design을 승인함
 
 그 전까지 구현하지 않는다.
+
+## 10. Production Agent Hierarchy v1
+
+Production 단계의 책임 계층은 다음을 기본값으로 한다.
+
+```text
+Project Orchestrator
+        ↓
+Video Director
+   ├─ Blender Spatial & Camera Specialist
+   ├─ Veo Cinematic Camera Specialist
+   └─ 2D Motion / Compositing capability
+        ↓
+Independent Visual QA
+```
+
+상세 계약은 다음 문서를 따른다.
+- `docs/02-harness/AGENT_HIERARCHY_V1.md`
+- `docs/02-harness/agents/PROJECT_ORCHESTRATOR.md`
+- `docs/02-harness/agents/VIDEO_DIRECTOR.md`
+- `docs/02-harness/agents/BLENDER_SPECIALIST.md`
+- `docs/02-harness/agents/VEO_CAMERA_SPECIALIST.md`
+- `docs/02-harness/agents/VISUAL_QA.md`
+- `docs/08-prompts/PRODUCTION_AGENT_PROMPT_BLUEPRINTS.md`
+
+### 10.1 Non-Negotiable Production Boundaries
+
+- Project Orchestrator는 project state/gate/budget/escalation을 소유하며 shot 미학을 직접 micromanage하지 않는다.
+- Video Director는 shot routing, camera language, transition, visual pacing을 소유한다.
+- Blender Specialist는 topology/axis/cutaway/explode/registered camera처럼 **공간 정합성이 사실 설명에 필요한 장면**을 소유한다.
+- Veo Cinematic Camera Specialist는 사람/분위기/역사 재현/establishing/bridge와 같은 **생성형 영화 장면**을 소유한다.
+- Veo의 prompt-based camera control을 Blender의 exact deterministic camera transform과 동일하게 취급하지 않는다.
+- Independent Visual QA는 creator와 논리적으로 분리되며 PASS/REVISE/REJECT/ESCALATE 권한을 가진다.
+- specialist가 hard lock, source certainty, reconstruction boundary를 임의로 바꾸면 안 된다.
+- 동일한 실패 입력을 이유 없이 반복 생성하지 않는다. retry는 causal input이 바뀌어야 한다.
+- Higgsfield 또는 다른 유료 camera 플랫폼은 core dependency가 아니다.
+
+### 10.2 Physical Agent Rule
+
+위 역할은 최소한 **책임 경계로는 분리 유지**한다.
+초기 구현에서 비용/복잡도를 줄이기 위해 같은 기반 모델이나 프로세스를 공유할 수는 있지만:
+- context packet
+- output contract
+- reviewer rubric
+- verdict artifact
+
+를 분리하여 역할 독립성을 보존한다.
