@@ -12,7 +12,8 @@ Purpose: prevent a future session from confusing remaining empirical evidence wo
 | Three representative paper walkthroughs | PASS | `PAPER_WALKTHROUGHS.md` | refinements incorporated |
 | 7-core artifact pruning | PASS | `ARTIFACT_PRUNING_REVIEW.md` | closed |
 | Full Venice end-to-end paper run | PASS ON PAPER | `docs/11-design-closure/pilot-venice/` | architecture closure evidence |
-| Field-aware stale propagation | PASS ON PAPER | Venice Review & Run Ledger / Closure 0.6 | implementation test still required |
+| Dynamic discrete-routing mechanism class | **PASS ON PAPER** | `MECHANISM_CLASS_GAP_AUDIT.md` + `AIRPORT_BAGGAGE_DYNAMIC_ROUTING_PAPER_TEST.md` | optional P5 behavioral/state fields only |
+| Field-aware stale propagation | PASS ON PAPER | Venice + baggage fault injections | implementation test still required |
 | Camera/transition contract | PASS FOR PHASE 1 PLANNING | `CAMERA_TRANSITION_GRAMMAR_V1.md` | closed until prototype evidence |
 | Audio/Post timeline contract | PASS FOR PHASE 1 PLANNING | `AUDIO_TIMELINE_CONTRACT_V1.md` | closed until prototype evidence |
 | AskAnything reuse boundary | PASS | `docs/10-reuse/ASKANYTHING_REUSE_AUDIT.md` | reuse only provider/kernel patterns |
@@ -36,9 +37,11 @@ Purpose: prevent a future session from confusing remaining empirical evidence wo
 Coding is not required to continue the following:
 
 1. Complete **frame/timeline** evidence for the reference corpus only when video frames are directly observable; transcript collection itself is complete for the selected 10-item corpus.
-2. Add a new paper episode only if it represents a mechanism class genuinely absent from Venice/aqueduct/tunnel tests.
-3. Refresh volatile tool/platform policy snapshots when new evidence appears.
-4. Audit new external reuse repositories only when they plausibly close a known gap.
+2. Refresh volatile tool/platform policy snapshots when new evidence appears.
+3. Audit a new external reuse repository only when it plausibly closes a known gap.
+4. Run another paper episode only if new evidence proves a mechanism class is still not represented by the current static/flow/alignment/failure/dynamic-routing coverage.
+
+The dynamic-routing test closes the previously identified discrete state/routing gap. Do **not** invent additional paper pilots merely to continue design activity.
 
 Do **not** fill time by adding new agents, orchestras, artifact types, databases or framework choices.
 
