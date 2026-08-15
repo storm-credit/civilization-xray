@@ -1,43 +1,62 @@
 # Civilization X-Ray — Claude Continuation Handoff
 
-Status: **Paste-ready / repository-first continuation guide**
+Status: **Paste-ready / repository-first continuation guide**  
+State date: **2026-08-15**
 
-This document exists so a new Claude / Claude Code session can continue without reconstructing prior chat history.
+This document lets a new Claude / Claude Code session continue from repository truth without reconstructing prior chat history.
 
-## 1. Repository
+## 1. Repository & Current State
 
 - Repository: `storm-credit/civilization-xray`
 - Default branch: `main`
-- Project type: long-form documentary/explainer production system
-- Current implementation state: **NOT STARTED**
-- Current design state: **Phase 0 architecture + Validation 0.5 + Design Closure 0.6 complete**
-- Closure pilot: **VX-PILOT-001 Venice Foundations end-to-end paper run PASS**
-- Remaining empirical benchmark state: **frame-level 10-video benchmark analysis PARTIAL**
+- Project: long-form documentary/explainer production system
+- Architecture / contract design: **CLOSED**
+- Implementation: **NOT STARTED / NOT AUTHORIZED**
+- Harness: **Stage-Gated Artifact Blackboard + Thin Director**
+- Studio: **4 responsibility orchestras + independent governance/shared services**
+- Core episode artifacts: **7, locked for Phase 1 planning**
+- Venice end-to-end paper run: **PASS ON PAPER**
+- Dynamic discrete-routing baggage paper test: **PASS ON PAPER**
+- 10-video transcript/text benchmark: **PASS / 10 OF 10**
+- 10-video direct frame/timeline benchmark: **PARTIAL / unobserved gaps remain**
+- Tool/provider capability snapshot: **validated 2026-08-15, volatile**
+- YouTube AI disclosure/rights/inauthentic-content policy snapshot: **validated 2026-08-15, volatile**
+
+The important distinction is:
+
+> **The remaining uncertainty is empirical/runtime evidence, not missing architecture.**
+
+Do not reopen the architecture merely because Python/TypeScript, workflow framework, DB, TTS provider, music provider or exact Google video model have not been selected. Those are deliberately deferred implementation choices.
+
+---
 
 ## 2. First Read Order
 
 Before making decisions, read these files in order:
 
 1. `CLAUDE.md`
-2. `docs/11-design-closure/DESIGN_CLOSURE_0_6_FINAL.md`
-3. `docs/11-design-closure/CORE_ARTIFACT_CONTRACTS_V1.md`
-4. `docs/11-design-closure/CAMERA_TRANSITION_GRAMMAR_V1.md`
-5. `docs/11-design-closure/AUDIO_TIMELINE_CONTRACT_V1.md`
-6. `docs/00-project/FINAL_DESIGN_BLUEPRINT.md`
-7. `docs/09-validation/VALIDATION_0_5_FINAL.md`
-8. `docs/02-harness/STUDIO_ORCHESTRATION_V2.md`
-9. `docs/02-harness/HARNESS_ARCHITECTURE.md`
-10. `docs/03-content/CONTENT_SYSTEM.md`
+2. `docs/09-validation/EMPIRICAL_VALIDATION_STATUS.md`
+3. `docs/11-design-closure/DESIGN_CLOSURE_0_6_FINAL.md`
+4. `docs/11-design-closure/CORE_ARTIFACT_CONTRACTS_V1.md`
+5. `docs/11-design-closure/DYNAMIC_SYSTEM_CONTRACT_ADDENDUM_V1.md`
+6. `docs/11-design-closure/PUBLISH_DISCLOSURE_CONTRACT_ADDENDUM_V1.md`
+7. `docs/11-design-closure/CAMERA_TRANSITION_GRAMMAR_V1.md`
+8. `docs/11-design-closure/AUDIO_TIMELINE_CONTRACT_V1.md`
+9. `docs/02-harness/STUDIO_ORCHESTRATION_V2.md`
+10. `docs/02-harness/HARNESS_ARCHITECTURE.md`
 11. `docs/04-script/SCRIPT_VISUAL_GRAMMAR.md`
 12. `docs/05-visual/MODELING_CAMERA_RENDER_ROUTER.md`
-13. `docs/06-production/AUDIO_POST_SYSTEM.md`
-14. `docs/01-discovery/FULL_STUDIO_BLIND_SPOT_SWEEP.md`
-15. `docs/10-reuse/ASKANYTHING_REUSE_AUDIT.md`
-16. `docs/10-reuse/ODDENGINE_REUSE_AUDIT.md`
-17. `docs/00-project/REFERENCE_METHODS.md`
-18. `docs/99-decisions/CHANGE_LOG.md`
+13. `docs/09-validation/REFERENCE_TRANSCRIPT_CORPUS_V1.md`
+14. `docs/09-validation/REFERENCE_ROLE_MATRIX_V1.md`
+15. `docs/09-validation/TOOL_CAPABILITY_REGISTRY_2026_08_15.md`
+16. `docs/09-validation/PUBLISH_RIGHTS_DISCLOSURE_VALIDATION_2026_08_15.md`
+17. `docs/09-validation/AIRPORT_BAGGAGE_DYNAMIC_ROUTING_PAPER_TEST.md`
+18. `docs/10-reuse/ASKANYTHING_REUSE_AUDIT.md`
+19. `docs/10-reuse/ODDENGINE_REUSE_AUDIT.md`
+20. `docs/00-project/REFERENCE_METHODS.md`
+21. `docs/99-decisions/CHANGE_LOG.md` and newest dated decision files
 
-Pilot example when contract behavior is unclear:
+For a concrete 7-artifact example, read:
 - `docs/11-design-closure/pilot-venice/01_EPISODE_BRIEF.md`
 - `02_EVIDENCE_PACK.md`
 - `03_STORY_PACK.md`
@@ -46,123 +65,77 @@ Pilot example when contract behavior is unclear:
 - `06_PRODUCTION_PACK.md`
 - `07_REVIEW_RUN_LEDGER.md`
 
-If documents conflict, prefer the newest explicit addendum/decision and record consolidation work rather than silently choosing.
+If documents conflict, prefer the newest explicit addendum/decision and record consolidation instead of silently choosing.
+
+---
 
 ## 3. Project Goal
 
 Civilization X-Ray is not a generic AI-video generator and not merely an architecture channel.
 
-Goal:
-
-> Explain the hidden mechanisms of structures, cities, historical engineering and civilization-scale infrastructure through evidence-linked long-form storytelling and explainable 3D/X-Ray visual grammar.
+> **Explain the hidden mechanisms of structures, cities, historical engineering and civilization-scale infrastructure through evidence-linked long-form storytelling and explainable X-Ray / section / flow / reconstruction visual grammar.**
 
 Default format: 8–15 minute long-form, topic-dependent.
 
-Core question for every episode:
+Core episode question:
 
-> What invisible mechanism becomes understandable only when we visually open, section, trace, explode, reconstruct or simulate it?
+> **What invisible mechanism becomes understandable only when we visually open, section, trace, explode, reconstruct or simulate it?**
 
-## 4. Non-Negotiable Working Method
+---
 
-The user expects these methods to be treated as project operating law:
+## 4. Non-Negotiable Working Law
 
-1. Blind-spot sweep before locking consequential decisions.
+1. Blind-spot sweep before consequential decisions.
 2. Pre-mortem / trap check before implementation planning.
-3. Four design alternatives shown together for consequential design choices when the alternatives are genuinely distinct.
-4. User intent / audience / success criteria interview before architecture lock — but never repeat questions already answered in repository/chat context.
-5. Reference-first work: inspect relevant GitHub/open-source/video/script exemplars and extract principles rather than copying surfaces.
-6. If work blocks or deviates from the plan, record where, why, impact and rollback path in `docs/99-decisions/CHANGE_LOG.md`.
-7. Keep top-level working laws synchronized in `CLAUDE.md`.
-8. Evidence before claiming PASS/completion.
-9. Do not over-orchestrate; logical role does not imply one physical agent.
-10. Do not start implementation unless the user explicitly authorizes it.
+3. Compare four genuinely distinct alternatives for consequential choices; do not manufacture four cosmetic variants.
+4. Check user intent / primary user / success criteria, but never repeat questions already answered in repository/current context.
+5. Reference-first work: inspect relevant GitHub/open-source/video/script/production exemplars and extract principles, not surface copies.
+6. If blocked or deviating, record where, why, impact, reversibility and rollback.
+7. Keep top-level laws in `CLAUDE.md` synchronized when the law itself changes.
+8. Evidence before PASS/completion claims.
+9. Logical role ≠ physical agent. Do not over-orchestrate.
+10. No implementation until the user explicitly authorizes it.
+11. Minimal change / blast-radius control.
+12. No silent provider/model/data fallback.
+13. Preserve reproducibility/resumability/provenance.
+14. Retry requires causal input change; respect retry/cost ceilings.
+15. Never commit plaintext secrets/credentials.
+16. Propagate stale state only to actual downstream dependencies.
+17. Definition of Done is an evidence bundle, not “file created.”
+
+---
 
 ## 5. Meta-Prompting Law
 
-Use the cycle:
+Use:
 
 `Context Dump → Missing Context Check → Prompt Refinement → Execute → Output Review → Learn`
 
-### Context Dump
-Include:
+Every serious work order should include:
 - goal
-- current decisions
-- forbidden changes
-- references
-- input/output contract
-- execution environment
-- known failures
+- relevant context/versions
+- constraints / forbidden changes
+- input contract
+- output contract
+- success criteria
+- evidence/verification rule
+- stop condition
+- escalation rule
+- self/output review
 
-### Missing Context Check
-Before executing a generated prompt, ask internally:
-- What context is truly missing?
-- What ambiguity materially changes the answer?
-- What assumptions am I making?
+Environment conversion:
+- Goal prompt → stop condition
+- Coding/agent prompt → file scope, constraints, forbidden areas, verification/evidence
+- Image prompt → composition, subject, structure/material, style, lighting, lens/camera, continuity locks
+- Video prompt → start/end state, camera intent/path, invariants, allowed movement, duration, continuity bridge
+- Research prompt → source policy, scope, source hierarchy, contradiction handling, verification method
 
-Do not ask the user for information already available in repository/current context.
-If a missing fact is not blocking, record the assumption and continue.
+Verdict vocabulary:
+`PASS | REVISE | REJECT | ESCALATE | NOT VERIFIED`
 
-### Success Criteria
-Every serious prompt/work order should have verifiable success criteria.
+---
 
-### Environment-Specific Conversion
-- Goal prompt: include stop conditions.
-- Coding/agent prompt: include file scope, constraints, forbidden areas, verification commands/evidence.
-- Image prompt: include composition, subject, structure/material, style, lighting, lens/camera direction and continuity locks.
-- Video prompt: include start/end state, camera intent/path, invariant elements, allowed motion, duration and continuity bridge.
-- Research prompt: include source policy, research boundary, source hierarchy, contradiction handling and verification method.
-
-### Output Review
-Do not treat generation as completion. Evaluate against success criteria and issue PASS / REVISE / REJECT / ESCALATE.
-
-## 6. Reference Repositories
-
-Verified methodology references:
-
-- `multica-ai/andrej-karpathy-skills`
-  - assumptions, simplicity, scope control, evidence before completion
-- `bradautomates/claude-video`
-  - timestamp transcript + visual/frame analysis, sparse-to-dense long-video analysis
-- `obra/superpowers`
-  - architecture discovery, brainstorming/design approval gates, written plans
-- `Egonex-AI/Understand-Anything`
-  - current lineage of the former `Lum1104/Understand-Anything`; relationship/dependency understanding
-- `rohitg00/agentmemory`
-  - persistent/retrievable memory, failure learning, context selection
-
-Use `docs/00-project/REFERENCE_METHODS.md` for exact adopt/do-not-adopt boundaries.
-
-Reference rule by task domain:
-- software/system implementation → comparable GitHub/open-source code/harness
-- documentary/video system → comparable video, script, production and prompt systems
-- if this were a novel project → comparable novels/genre structures are the “reference code” equivalent
-
-## 7. Existing Internal Reuse Sources
-
-### `storm-credit/askanything_video_generator`
-Use only the selected infrastructure patterns documented in `ASKANYTHING_REUSE_AUDIT.md`:
-- Google client/provider boundary
-- Veo operation lifecycle
-- polling/retry/download
-- quota/provider-health ideas
-- media normalization
-- bounded concurrency/cache
-- cost-accounting patterns
-- headless Blender execution pattern
-
-Do not inherit Shorts-specific editorial/camera routing.
-
-### `storm-credit/oddengine`
-Use only the selected contracts documented in `ODDENGINE_REUSE_AUDIT.md`:
-- executable artifact gates
-- explicit shot continuity bridge
-- durable prompt/reference provenance
-
-Do not import its MV ontology, fixed stage pipeline, character-centric schema, fixed shot counts or exact model-routing matrix.
-
-## 8. Current Studio Architecture
-
-Top-level responsibility domains:
+## 6. Closed Studio / Harness Architecture
 
 ```text
 Project Orchestrator
@@ -174,35 +147,34 @@ Project Orchestrator
 
 Cross-cutting:
 ├─ Fact / Rights / Quality Governance
-└─ Shared Asset & Memory Service
+└─ Shared Asset / Memory / Provider Health services
 ```
 
-Visual hierarchy:
+Visual responsibility:
 
 ```text
 Project Orchestrator
         ↓
 Video Director
    ├─ Blender Spatial & Camera Specialist
-   ├─ Veo Cinematic Camera Specialist
+   ├─ Generative Cinematic Video capability
    └─ 2D Motion / Compositing capability
         ↓
 Independent Visual QA
 ```
 
-Blender owns deterministic spatial truth/camera where topology is explanatory evidence.
-Veo owns cinematic generative reconstruction/people/atmosphere/bridge shots where exact topology is not the evidence.
-Higgsfield is not a required dependency.
+The historical role name `Veo Cinematic Camera Specialist` must **not** be interpreted as a permanent Veo-only model lock. Current Google video model selection belongs behind a versioned capability adapter.
 
-Music is a specialist responsibility inside Audio & Post, not a separate top-level orchestra.
-
-## 9. Current Harness
-
-Selected topology:
+Selected harness:
 
 > **Stage-Gated Artifact Blackboard + Thin Director**
 
-Effective Phase 1 physical core artifacts, now field-tested in Closure 0.6:
+Director owns phase/gate/budget/retry/escalation/version authority, not factual truth or every specialist artifact's content.
+
+---
+
+## 7. Seven Core Artifacts
+
 1. Episode Brief
 2. Evidence Pack
 3. Story Pack
@@ -211,106 +183,199 @@ Effective Phase 1 physical core artifacts, now field-tested in Closure 0.6:
 6. Production Pack
 7. Review & Run Ledger
 
-Keep logical distinctions inside these artifacts; split new physical files only when complexity proves the need.
+Do not create an eighth default artifact unless a real episode proves a context/authority/versioning failure that these seven cannot represent.
 
-Closure 0.6 additionally locks:
-- field-aware stale propagation
-- executable artifact-gate principle
-- Camera & Transition Grammar v1
-- Audio/Post Timeline Contract v1
-- narration-unit ≠ shot-count rule
-- representative-vs-universal qualifier as a visual/caption/release hard lock where relevant
+Latest additive contracts:
+- dynamic/stateful systems may use optional P5 behavioral/state invariants;
+- existing continuity classes remain `OBJECT / SPATIAL / SEMANTIC / TEMPORAL`;
+- P6 stores asset-level synthetic/provenance state;
+- P7 stores final platform disclosure/authenticity/release state;
+- no new Dynamic System Manifest or Disclosure Manifest is justified.
 
-## 10. Current No-Code Blind Spots / Remaining Work
+---
 
-Architecture/contract design is now considered closed. Remaining work is empirical rather than another architecture layer:
+## 8. Current Empirical Results
 
-- direct frame + timestamp transcript reverse-engineering of a 10-video benchmark corpus when media access permits
-- update observed camera/action frequencies from real benchmark evidence
-- source/rights research for actual publish-bound assets
-- tool capability registry refresh from current official docs when provider decisions are needed
-- additional paper episode only if it represents a genuinely new mechanism class and exposes a contract failure
+### Reference corpus
+- 10/10 selected transcript/text items analyzed at declared evidence level.
+- Practical Engineering: mechanism/demo reference.
+- The B1M: megaproject constraint/construction narrative reference.
+- `신비한 건축사전`: Korean short-form packaging/hook/compressed-mechanism reference, **not** evidence for 8–15 minute pacing.
+- direct video frame/timeline evidence remains partial; never invent camera-cut frequency, shot duration, music timing or visual frequency from transcript text.
 
-Already completed in Closure 0.6 and **do not repeat by default**:
-- full-studio end-to-end paper run
-- deliberate stale/dependency propagation fault injection
-- 7-artifact contract validation
-- camera/transition contract closure
-- Audio/Post timeline contract closure
+Evidence-backed hook families:
+- apparent contradiction
+- comparison anomaly
+- invisible ongoing process
+- incompatible constraints
+- familiar icon / forgotten impossibility
 
-These results are recorded under `docs/11-design-closure/`.
+### Mechanism-class coverage
+No-code tests now cover:
+- static/spatial hidden structure — Venice
+- continuous flow/system journey — aqueduct
+- construction/alignment geometry — tunnel
+- failure/stress/counterfactual grammar — reference corpus + existing design
+- dynamic discrete identity/state/routing — airport baggage
 
-## 11. Critical Stop Conditions
+Current evidence does **not** justify another paper pilot merely to continue design work.
 
-STOP / ESCALATE instead of proceeding when:
-- a factual claim cannot be verified enough for the intended certainty
-- exact geometry is required but evidence cannot support it
-- rights/provenance is unresolved for a publish-bound asset
-- a new design would silently invalidate a locked artifact
-- expensive generation is requested before its upstream gate passes
-- implementation would begin without explicit user authorization
+### Tool/provider snapshot
+As of the dated snapshot:
+- Blender remains the deterministic spatial/camera backbone.
+- Google video remains behind a capability adapter; do not hardcode one permanent default model from old AskAnything assumptions.
+- Korean TTS is feasible, but final provider requires implementation-time A/B audition.
+- generated music is feasible, but final provider and density require pilot audition.
+- Post remains final timeline authority.
 
-Do not stop merely because a non-critical detail is unknown; record a bounded assumption and continue.
+### Publish/rights snapshot
+- asset-level provenance and platform-level AI disclosure are different controls.
+- realistic generated reconstructions of real places/events and AI-generated music are current YouTube disclosure candidates/requirements per the dated validation.
+- required disclosure is not itself a monetization failure.
+- repetitive/mass-produced inauthentic content remains a monetization risk regardless of AI use.
+- refresh policy before implementing publication automation.
+
+---
+
+## 9. Internal Reuse Boundaries
+
+### `storm-credit/askanything_video_generator`
+Reuse only audited infrastructure patterns such as:
+- Google client/provider boundary
+- generation request/poll/download/retry lifecycle
+- quota/provider-health ideas
+- media normalization
+- bounded concurrency/cache
+- cost accounting
+- headless Blender execution pattern
+
+Do not inherit:
+- Shorts emotion/format routing
+- fixed duration/aspect assumptions
+- old model IDs/prices as current truth
+- silent cross-provider fallback
+
+### `storm-credit/oddengine`
+Reuse only:
+- executable artifact integrity gates
+- explicit continuity bridge
+- durable prompt/reference provenance
+
+Do not import its MV ontology, fixed pipeline, fixed shot count, character schema or provider-routing matrix.
+
+---
+
+## 10. What Is Actually Left Before Coding
+
+With current available evidence, **valuable architecture/design expansion is exhausted**.
+
+Remaining no-code work is conditional, not mandatory busywork:
+
+1. **Direct frame/timeline evidence** for the 10-video corpus — only when actual video frames are directly observable.
+2. Refresh volatile provider/tool/platform policy snapshots when implementation/publishing decisions approach.
+3. Audit another external repository only if it plausibly closes a known gap.
+4. Run another paper episode only if new evidence demonstrates an unrepresented mechanism/contract failure.
+
+Do not fill the gap by inventing:
+- new orchestras
+- new default agents
+- new core artifacts
+- DB/vector DB design
+- dashboard/UI design
+- cloud/deployment design
+- language/framework decisions
+- arbitrary additional pilots
+
+Those would be premature or overengineering.
+
+---
+
+## 11. What Happens When the User Finally Authorizes Coding
+
+Do **not** jump directly into code.
+
+First perform an **Implementation Readiness Review**:
+
+1. re-read current main and empirical status;
+2. implementation pre-mortem;
+3. compare four genuinely distinct minimal implementation scopes;
+4. define fixed benchmark inputs for Blender / video / TTS / music auditions;
+5. choose Python vs TypeScript, direct orchestrator vs framework, storage/database, physical agent count only against closed contracts and measured needs;
+6. verify current official provider/model/API/pricing/quota terms again;
+7. write a minimal supervised prototype implementation plan;
+8. only then code.
+
+Initial implementation must prove the smallest path, not build the whole autonomous studio at once.
+
+Implementation decisions intentionally still open:
+- Python vs TypeScript
+- direct orchestrator vs LangGraph/other workflow framework
+- SQLite/Postgres/other storage
+- whether vector retrieval is needed at all
+- physical agent count
+- exact Blender Python package/API structure
+- current Google video model routing
+- final Korean TTS provider/voice
+- final music provider
+
+These are **not missing design**.
+
+---
 
 ## 12. Paste-Ready Claude Bootstrap Prompt
 
-Use the following as the first prompt in Claude Code if needed:
-
 ```text
-GitHub 저장소 `storm-credit/civilization-xray`의 현재 main을 기준으로 이전 작업을 이어서 진행해.
+GitHub 저장소 `storm-credit/civilization-xray`의 현재 main을 정본으로 이전 작업을 이어서 진행해.
 
-중요: 이전 대화 내용을 추측하지 말고 저장소를 정본으로 읽어라.
-먼저 다음 파일을 반드시 확인해:
-- CLAUDE.md
-- docs/11-design-closure/DESIGN_CLOSURE_0_6_FINAL.md
-- docs/11-design-closure/CORE_ARTIFACT_CONTRACTS_V1.md
-- docs/11-design-closure/CAMERA_TRANSITION_GRAMMAR_V1.md
-- docs/11-design-closure/AUDIO_TIMELINE_CONTRACT_V1.md
-- docs/00-project/FINAL_DESIGN_BLUEPRINT.md
-- docs/09-validation/VALIDATION_0_5_FINAL.md
-- docs/02-harness/STUDIO_ORCHESTRATION_V2.md
-- docs/02-harness/HARNESS_ARCHITECTURE.md
-- docs/10-reuse/ASKANYTHING_REUSE_AUDIT.md
-- docs/10-reuse/ODDENGINE_REUSE_AUDIT.md
-- docs/99-decisions/CHANGE_LOG.md
-- docs/00-project/CLAUDE_HANDOFF.md
+먼저 반드시 읽어:
+1. CLAUDE.md
+2. docs/09-validation/EMPIRICAL_VALIDATION_STATUS.md
+3. docs/11-design-closure/DESIGN_CLOSURE_0_6_FINAL.md
+4. docs/11-design-closure/CORE_ARTIFACT_CONTRACTS_V1.md
+5. docs/11-design-closure/DYNAMIC_SYSTEM_CONTRACT_ADDENDUM_V1.md
+6. docs/11-design-closure/PUBLISH_DISCLOSURE_CONTRACT_ADDENDUM_V1.md
+7. docs/11-design-closure/CAMERA_TRANSITION_GRAMMAR_V1.md
+8. docs/11-design-closure/AUDIO_TIMELINE_CONTRACT_V1.md
+9. docs/09-validation/REFERENCE_TRANSCRIPT_CORPUS_V1.md
+10. docs/09-validation/TOOL_CAPABILITY_REGISTRY_2026_08_15.md
+11. docs/09-validation/PUBLISH_RIGHTS_DISCLOSURE_VALIDATION_2026_08_15.md
+12. docs/10-reuse/ASKANYTHING_REUSE_AUDIT.md
+13. docs/10-reuse/ODDENGINE_REUSE_AUDIT.md
+14. docs/00-project/CLAUDE_HANDOFF.md
 
-현재 상태는 Phase 0 architecture + Validation 0.5 + Design Closure 0.6까지 완료됐고, VX-PILOT-001 베네치아 end-to-end paper run도 PASS했다. 구현은 아직 시작하지 않았다.
-사용자가 별도로 구현을 명시 승인하기 전까지 코드/API/앱 스캐폴딩/자동화 구현을 하지 마라.
+현재 상태:
+- architecture/contract design CLOSED
+- Stage-Gated Artifact Blackboard + Thin Director 확정
+- 4 responsibility orchestras 확정
+- 7 core artifacts 확정
+- Venice end-to-end paper run PASS ON PAPER
+- dynamic discrete-routing baggage paper test PASS ON PAPER
+- transcript/text reference corpus 10/10 PASS
+- direct frame/timeline corpus만 PARTIAL
+- implementation NOT STARTED / NOT AUTHORIZED
 
-작업 원칙:
-1. 맹점 훑기 필수.
-2. 구현 계획 전에 pre-mortem/함정 체크.
-3. 중요한 설계 결정은 실제로 구분되는 4안을 한눈에 비교.
-4. 사용자 의도/주사용자/성공조건을 확인하되 이미 저장소에 답이 있는 질문은 다시 묻지 말 것.
-5. 유사 GitHub/영상/스크립트 레퍼런스를 먼저 조사하고 표면을 복사하지 말고 원리를 추출.
-6. 계획과 달라지면 위치/이유/영향/rollback을 CHANGE_LOG.md에 기록.
-7. 프로젝트 최상위 규칙이 바뀌면 CLAUDE.md도 동기화.
-8. 완료/PASS는 근거가 있을 때만 선언.
-9. logical role과 physical agent 수를 혼동하지 말고 과설계 금지.
-10. 사용자가 자동 진행을 원하므로 비차단 불확실성은 가정을 기록하고 계속 진행. 정말 결과를 바꾸는 누락 정보만 질문.
+중요:
+사용자가 명시적으로 구현을 승인하기 전에는 코드/API/앱 스캐폴딩/agent runtime/deployment를 만들지 마라.
+현재 증거로는 추가 architecture expansion이나 추가 paper pilot을 기본적으로 만들 이유가 없다.
 
-메타 프롬프팅:
-Context Dump → Missing Context Check → Prompt Refinement → Execute → Output Review → Learn.
-각 prompt/work order에는 성공조건과 실행환경별 제약/중지요건을 포함해라.
+작업법:
+- 맹점 훑기
+- 구현 전 pre-mortem
+- consequential decision은 4개의 실제 대안 비교
+- 이미 답이 있는 사용자 질문 반복 금지
+- reference-first
+- 최소 변경
+- silent fallback 금지
+- deviation은 위치/이유/영향/rollback 기록
+- evidence before PASS
+- Context Dump → Missing Context Check → Prompt Refinement → Execute → Output Review → Learn
 
-방법론 레퍼런스:
-- multica-ai/andrej-karpathy-skills
-- bradautomates/claude-video
-- obra/superpowers
-- Egonex-AI/Understand-Anything (former Lum1104 lineage)
-- rohitg00/agentmemory
+남은 no-code 검증은 실제 새 근거가 있을 때만 진행해:
+- 직접 관찰 가능한 frame/timeline evidence
+- 변동성이 큰 provider/platform policy refresh
+- 명확한 gap을 닫는 외부 repo audit
 
-내부 재사용 레퍼런스:
-- storm-credit/askanything_video_generator: Veo/Google provider infrastructure 등 선택적 재사용
-- storm-credit/oddengine: executable gates, continuity bridge, prompt/reference provenance만 선택적 재사용
-각각 docs/10-reuse의 audit 문서를 우선해라.
+사용자가 구현을 승인하면 바로 코딩하지 말고 Implementation Readiness Review → 4개 최소 구현안 비교 → 도구/언어/저장소 선택 → minimal supervised prototype plan → 코딩 순서로 진행해.
 
-첫 행동:
-A) 현재 main과 Closure 0.6 정본을 확인하고,
-B) Architecture를 다시 늘리지 말고 남은 empirical validation만 필요할 때 진행하며,
-C) 사용자가 구현을 승인하면 그때 `Phase 1 Minimal Supervised Prototype` 구현 계획부터 시작하고,
-D) 계획 변경 시 CHANGE_LOG.md에 위치/이유/영향/rollback을 기록해라.
-
-구현 허가 전에는 계획만 핑계로 코드를 만들지 말고, 허용된 no-code 연구/검증이 있으면 실제 문서 수정·검수·PR까지 진행해라.
+계획이 달라지면 조용히 바꾸지 말고 결정 기록에 이유와 영향을 남겨.
 ```
