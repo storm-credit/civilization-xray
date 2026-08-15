@@ -105,6 +105,24 @@ Civilization X-Ray 적용:
 
 ---
 
+# Empirical Reference Role Split
+
+`docs/09-validation/REFERENCE_ROLE_MATRIX_V1.md`의 2026-08-15 empirical update를 따른다.
+
+역할 분리:
+- `신비한 건축사전` → Korean short-form packaging / hook / compressed mechanism grammar
+- Practical Engineering → long-form civil-engineering explanation clarity
+- The B1M → long-form construction / mega-project story / scale framing
+- Lesics → 3D engineering mechanism visualization
+
+핵심 규칙:
+- 한 레퍼런스가 packaging, pacing, visual grammar, factual authority를 모두 소유하지 않는다.
+- short-form 성과를 8–15분 long-form pacing 근거로 직접 전이하지 않는다.
+- direct frame/transcript를 보지 못한 항목은 camera cadence나 production tool을 추측하지 않는다.
+- benchmark observation은 `OBSERVED_DIRECT | OBSERVED_PUBLIC_INDEX | OBSERVED_REPOST | INFERRED | UNOBSERVED` 중 하나로 표시한다.
+
+---
+
 # Reference Review Rule
 
 새 레퍼런스를 추가할 때 반드시 기록:
