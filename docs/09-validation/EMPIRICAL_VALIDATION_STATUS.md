@@ -18,9 +18,10 @@ Purpose: prevent a future session from confusing remaining empirical evidence wo
 | AskAnything reuse boundary | PASS | `docs/10-reuse/ASKANYTHING_REUSE_AUDIT.md` | reuse only provider/kernel patterns |
 | OddEngine reuse boundary | PASS | `docs/10-reuse/ODDENGINE_REUSE_AUDIT.md` | reuse only gate/continuity/provenance patterns |
 | Short-form vs long-form reference roles | PASS / SNAPSHOT | `REFERENCE_ROLE_MATRIX_V1.md` | no topology change |
+| 10-video transcript/text corpus | **PASS / 10 OF 10** | `REFERENCE_TRANSCRIPT_CORPUS_V1.md` | script grammar validated/refined |
+| 10-video frame/timeline corpus | **PARTIAL / UNOBSERVED GAPS** | direct video-frame evidence not complete | camera frequency must not be assumed |
 | Blender / Google video / TTS / music official capabilities | PASS / DATED SNAPSHOT | `TOOL_CAPABILITY_REGISTRY_2026_08_15.md` | adapter strategy strengthened |
 | YouTube AI disclosure / monetization / rights handling | PASS / DATED SNAPSHOT | `PUBLISH_RIGHTS_DISCLOSURE_VALIDATION_2026_08_15.md` | additive P6/P7 metadata only |
-| 10-video timestamp transcript + frame corpus | **PARTIAL** | direct-media evidence not complete | may tune grammar, cannot be assumed |
 | Actual Blender procedural scene/readability performance | DEFERRED TO PROTOTYPE | fixed pilot input required | implementation evidence |
 | Actual Google video continuity/cost/usable-output ratio | DEFERRED TO PROTOTYPE | provider audition required | model routing thresholds only |
 | Actual Korean TTS voice selection | DEFERRED TO AUDITION | Cloud TTS vs Gemini TTS candidate | provider choice only |
@@ -34,8 +35,8 @@ Purpose: prevent a future session from confusing remaining empirical evidence wo
 
 Coding is not required to continue the following:
 
-1. Complete more of the 10-video reference corpus only from directly observable transcript/frame evidence.
-2. Add new paper episode only if it represents a mechanism class genuinely absent from Venice/aqueduct/tunnel tests.
+1. Complete **frame/timeline** evidence for the reference corpus only when video frames are directly observable; transcript collection itself is complete for the selected 10-item corpus.
+2. Add a new paper episode only if it represents a mechanism class genuinely absent from Venice/aqueduct/tunnel tests.
 3. Refresh volatile tool/platform policy snapshots when new evidence appears.
 4. Audit new external reuse repositories only when they plausibly close a known gap.
 
