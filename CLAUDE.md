@@ -66,6 +66,51 @@ Civilization X-Ray는 단순한 세계 건축물 소개 채널이나 AI 영상 �
    - “완료”, “검증됨”, “통과”는 근거 없이 선언하지 않는다.
    - 상태 문자열만으로 gate를 통과시키지 않는다. 실제 artifact/version/evidence integrity가 있어야 한다.
 
+### 2.1 Operational Hardening Rules
+
+다음 규칙은 구현·리서치·콘텐츠 제작·에이전트 자동화 전반에 공통 적용한다.
+
+9. **Minimal change / blast-radius control**
+   - 목표를 달성하는 가장 작은 변경을 우선한다.
+   - 관련 없는 파일, 계약, 프롬프트, 에이전트 구조를 함께 정리하거나 리팩터링하지 않는다.
+   - 변경 전 `what changes / what must not change / affected downstream`을 명시한다.
+   - 구조적 리팩터링은 기능 수정과 분리하고 별도 근거와 검증을 요구한다.
+
+10. **No silent fallback**
+   - 모델/API/도구/소스가 실패했을 때 다른 provider, 더 낮은 품질 경로, 오래된 캐시, 추정값으로 조용히 대체하지 않는다.
+   - fallback이 허용되면 `무엇이 실패했는지 / 무엇으로 대체했는지 / 품질·비용·팩트 영향`을 기록한다.
+   - fallback이 성공조건을 바꾸면 자동 진행하지 말고 `ESCALATE`한다.
+
+11. **Reproducibility and resumability**
+   - 중요한 결과는 chat context에만 존재하면 안 된다.
+   - 입력 artifact/version, prompt/version, provider/model/tool version, 주요 설정, output identity를 재현 가능한 형태로 남긴다.
+   - 긴 작업은 중간 실패 후 처음부터 전부 다시 하지 않고 last verified checkpoint에서 재개할 수 있어야 한다.
+   - 동일 입력에 대한 재실행이 불필요한 중복 산출물을 만들지 않도록 idempotency를 지향한다.
+
+12. **Retry / cost / time budget**
+   - blind retry 금지. 재시도 전 실패 원인을 분류하고 최소 하나의 causal input을 바꾼다.
+   - task/shot/stage마다 retry ceiling과 cost ceiling을 둘 수 있어야 한다.
+   - 한도 초과 시 품질을 몰래 낮추지 말고 `ESCALATE` 또는 cheaper valid route로 명시적 reroute한다.
+   - “이미 쓴 비용” 때문에 품질 미달 결과를 승인하지 않는다.
+
+13. **Secrets / credentials / sensitive-data rule**
+   - API key, service-account secret, access token, cookie, private credential을 저장소·프롬프트·로그·artifact에 평문으로 남기지 않는다.
+   - secret 값 자체가 아니라 secret reference/환경변수 이름만 기록한다.
+   - 외부 서비스로 보내는 context는 task에 필요한 최소 범위로 제한한다.
+   - debug output에 credential 또는 불필요한 민감 데이터가 섞이지 않았는지 확인한다.
+
+14. **Dependency-aware stale propagation**
+   - upstream artifact가 바뀌면 downstream 전체를 무조건 폐기하거나, 반대로 아무것도 갱신하지 않는 두 극단을 피한다.
+   - 변경된 field/claim/asset과 실제 dependency가 있는 downstream만 `STALE` 처리한다.
+   - stale artifact는 재검증 전 publish/final gate에서 사용할 수 없다.
+   - dependency 영향이 불명확하면 보수적으로 REVIEW 상태로 보내되 원인을 기록한다.
+
+15. **Definition of Done = evidence bundle**
+   - 완료는 “코드/문서/미디어를 만들었다”가 아니라 성공조건을 충족했다는 증거 묶음이다.
+   - 작업 유형에 맞게 최소한 `outputs + validation result + unresolved risks + changed files/artifacts + next boundary`를 남긴다.
+   - 테스트/검증을 실행하지 못했으면 PASS라고 쓰지 않고 `NOT VERIFIED`와 이유를 명시한다.
+   - 사용자에게 보고하는 완료 상태와 저장소/run ledger의 상태가 서로 달라서는 안 된다.
+
 ## 3. Meta-Prompting Protocol
 
 기본 사이클:
@@ -84,7 +129,7 @@ AI가 먼저 내부적으로 점검한다.
 저장소/현재 대화에 이미 있으면 재질문하지 않는다. 성공조건을 materially 바꾸는 정보만 질문한다. 불필요한 지시/중복/충돌을 깎아낸다.
 
 ### 3.3 Success Criteria
- serious prompt/work order마다 가능한 한 검증 가능한 성공조건을 붙인다.
+serious prompt/work order마다 가능한 한 검증 가능한 성공조건을 붙인다.
 
 예:
 - 첫 30초 안에 핵심 질문/시청 이유/visual transformation이 나타난다.
