@@ -127,7 +127,7 @@ Decision: **Selected umbrella positioning.**
 6. Evidence Quality — 신뢰 가능한 자료가 충분한가?
 7. Story Tension — 문제→해결 구조가 있는가?
 8. Scale/Awe — 규모감/비교가 강한가?
-9. Differentiation — 흔한 역사/여행 영상과 다른가?
+9. Differentiation — 흔한 역사/여행/AI 재현 영상과 다른가?
 10. Production Efficiency — 예상 비용 대비 설명 가치가 높은가?
 
 ### Hard Reject
@@ -135,6 +135,8 @@ Decision: **Selected umbrella positioning.**
 - 핵심 사실을 신뢰할 만한 자료로 확인하기 어려움
 - 제목만 자극적이고 실제 mechanism이 약함
 - 레퍼런스 채널의 특정 에피소드와 너무 가까운 복제
+- AI 재현 장면 자체가 주된 가치이고 숨은 작동 원리/시스템이 없음
+- 다른 에피소드의 대본 구조에서 명사만 바꿔도 거의 그대로 작동하는 템플릿형 기획
 
 ---
 
@@ -213,3 +215,97 @@ Normal system → load/stress → first failure → propagation → safeguards �
 > “이 영상에서 X-Ray로 보여줄, 눈에 보이지 않는 원리는 무엇인가?”
 
 답이 없으면 Civilization X-Ray 소재가 아니다.
+
+---
+
+# History Adjacency Guardrail — 2026-08-22 Hardening
+
+최근 AI 역사 재현/타임트래블 브이로그/시네마틱 역사 영상이 빠르게 복제되는 시장 상황을 고려해, 역사 콘텐츠의 역할을 명확히 한다.
+
+## Core rule
+
+> **History is a context/pillar. Mechanism is the channel identity.**
+
+Civilization X-Ray는 “AI로 과거를 보여주는 채널”이 아니다.
+역사적 시대/사건/사람은 다음을 설명할 때 사용한다.
+
+- 어떤 제약이 설계를 강제했는가
+- 어떤 구조/물류/조직 시스템이 작동했는가
+- 무엇이 어떻게 이동했는가
+- 어떤 선택지가 왜 탈락했는가
+- 어디서 실패했고 무엇이 바뀌었는가
+- 그 문명이 겉에서 보이지 않는 어떤 시스템에 의존했는가
+
+## Not default Civilization X-Ray formats
+
+다음은 별도 format/brand를 의도적으로 만들지 않는 한 기본적으로 reject한다.
+
+- “고대 로마의 하루” 같은 순수 체험형 AI 역사 브이로그
+- 인물 전기 중심 영상인데 숨은 메커니즘이 없는 경우
+- 전투 장면의 스펙터클이 핵심인 순수 재현
+- 사건을 연대순으로 읽어주는 역사 요약
+- 영화 같은 AI B-roll이 narration을 장식할 뿐 설명하지 않는 영상
+
+## Historical episode promotion test
+
+역사 소재는 다음 중 최소 3개를 만족해야 한다.
+
+1. `Hidden Mechanism >= 4`
+2. `X-Ray Value >= 4`
+3. 하나 이상의 causal chain을 시각적으로 증명할 수 있음
+4. 하나 이상의 rejected alternative / constraint / failure logic이 있음
+5. 현대 시청자가 표면만 보고는 알기 어려운 시스템이 있음
+6. 재구성 장면 없이도 설명 thesis가 성립함
+
+마지막 조건이 중요하다.
+AI 재구성 영상이 없어도 thesis가 살아 있어야 한다.
+
+---
+
+# Anti-Template / Authenticity Guardrail
+
+제작 문법, 카메라 vocabulary, intro/outro, artifact workflow는 반복 가능하다.
+하지만 **substance는 episode-specific**이어야 한다.
+
+다음 중 2개 이상이면 `REVISE / REJECT` 후보다.
+
+- 다른 소재명으로 바꿔도 중심 대본이 거의 그대로 작동
+- 핵심 explanatory visual의 절반 이상이 다른 에피소드에서 그대로 재사용 가능
+- Evidence Pack의 episode-specific primary/technical evidence가 빈약
+- Generated cinematic footage가 factual/causal explanation보다 더 많은 비중을 차지
+- visual progression이 establishing shot들의 연속이고 reveal/trace/stress/reassembly가 약함
+- 고유한 mechanism chain / route / state / tradeoff / failure logic이 없음
+- 제목은 역사적 스펙터클을 약속하지만 결말에 고유한 explanatory payoff가 없음
+
+목표는 생산량이 아니라:
+
+> **같은 제작 시스템을 사용하되, 서로 바꿔 끼울 수 없는 에피소드를 만드는 것.**
+
+---
+
+# Historical Reconstruction Role Classes
+
+역사적 생성 장면은 다음 중 하나로 분류한다.
+
+## HRC-1 CONTEXT
+시대·사람·생활·분위기 제공.
+
+## HRC-2 RECONSTRUCTION_SUPPORT
+근거가 있는 과정/행동을 이해시키는 보조 재구성. 불확실성/대표성 qualifier 유지.
+
+## HRC-3 EXPLANATORY_PROOF
+정확한 순서·공간·상태 자체가 설명 증거인 장면.
+
+HRC-3는 opaque generative video의 기본 역할이 아니다.
+대체로 Blender / 2D / real reference / evidence-controlled composite가 우선한다.
+
+AniJam 또는 direct generative video의 historical output은 기본적으로 `HRC-1` 또는 `HRC-2`로 시작한다.
+
+---
+
+# Market Moat Statement
+
+> **생성형 영상의 품질이 누구에게나 비슷해질수록, Civilization X-Ray의 경쟁력은 “무슨 영상을 만들었는가”보다 “그 영상을 보고 무엇을 이해하게 되었는가”에 둔다.**
+
+자세한 검증:
+`docs/09-validation/AI_HISTORY_MARKET_MOAT_VALIDATION_2026_08_22.md`
