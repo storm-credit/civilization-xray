@@ -1,12 +1,12 @@
 # VX-PILOT-001 — Production Pack
 
 Artifact: P6 Production Pack  
-Version: v1  
-Status: PAPER_PRODUCTION_READY  
+Version: v1.1  
+Status: PAPER_PRODUCTION_READY / RIGHTS_PREFLIGHT_PARTIAL  
 Inputs: Visual Plan v1 + Spatial / Asset Bible v1  
 Owner: Video Director / Post Director coordination  
 
-No media is generated in Closure 0.6. This pack tests whether approved specs are sufficient to dispatch work without hidden interpretation.
+No media is generated in the current no-code phase. Closure 0.6 proved dispatch contracts on paper; v1.1 additionally starts publish-bound source/rights preflight without implementation or media generation.
 
 ---
 
@@ -14,14 +14,15 @@ No media is generated in Closure 0.6. This pack tests whether approved specs are
 
 Principle: cheap reasoning first, expensive pixels last.
 
-Paper route:
+Paper/preproduction route:
 1. 2D storyboard/blockout for all 15 shots
 2. one reusable Blender foundation module
 3. deterministic camera/previs for spatial sequence
 4. only 1–3 generative cinematic clips if they add value
-5. rough assembly with scratch narration
-6. audio beat map / temp music
-7. QA before any high-cost reruns
+5. rights-cleared real/historical context assets where they explain better than generation
+6. rough assembly with scratch narration
+7. audio beat map / temp music
+8. QA before any high-cost reruns
 
 ---
 
@@ -68,15 +69,16 @@ Deliverable:
 Rule:
 - no source figure copied unless rights cleared
 - redraw concepts from facts, not copyrighted figure styling
+- rights clearance never promotes a figure into factual authority; Evidence Pack claim/source hierarchy remains authoritative
 
 ---
 
-## PROD-VE-01 — Historical Atmosphere Clip
+## PROD-GEN-01 — Historical Atmosphere Clip
 Covers: SH09
 Purpose:
 - human/historical context only
 
-Veo Specialist work order:
+Generative Cinematic Video work order:
 - reconstruction level: R2
 - primary event: workers handling/working around timber in a historic Venetian construction context
 - one visual action only
@@ -84,6 +86,12 @@ Veo Specialist work order:
 - avoid impossible modern machinery
 - avoid text/signage
 - architecture must not be presented as exact Santa Maria Maggiore reconstruction unless reference-bound
+
+Execution route candidates:
+1. direct provider adapter
+2. AniJam W0 supervised workbench
+3. rights-cleared historical illustration/detail + 2.5D parallax
+4. omit if no cinematic layer adds explanatory value
 
 ### Continuity Bridge
 Previous end state:
@@ -102,7 +110,7 @@ Compatibility note:
 - bridge is SEMANTIC/TEMPORAL, not exact spatial continuation
 
 Continuity risk:
-MEDIUM — AI may invent foundation topology; crop/frame so topology is not offered as evidence.
+MEDIUM — generation may invent foundation topology; crop/frame so topology is not offered as evidence.
 
 ### Reference Binding
 Possible reference: approved mood/wardrobe/era references
@@ -112,20 +120,143 @@ May reinterpret: extras, texture, weather
 Must not affect: canonical foundation geometry
 
 Fallback:
-- licensed historical illustration/detail + 2.5D parallax
-- no Veo generation required for episode validity
+- rights-cleared historical illustration/detail + 2.5D parallax
+- no generative video required for episode validity
 
 ---
 
 ## PROD-CTX-01 — Modern Venice Context
 Covers: SH01, SH15
 Preferred route order:
-1. rights-cleared real/reference footage
+1. rights-cleared real/reference footage or still
 2. approved still + parallax
-3. Veo contextual generation if identity need is generic
+3. generative contextual shot if identity need is generic
 
 Rule:
 A generated “Venice-like” façade cannot be captioned as a named real building.
+
+---
+
+# Publish-Bound Source / Rights Candidate Registry v1
+
+Status legend:
+- `PRE-CLEARED` — license/public-domain status checked at source page; final file snapshot/credit still required before publish
+- `CONDITIONAL` — usable only with stated attribution/terms review
+- `HOLD` — do not select until Rights Governance resolves condition
+- `REJECT_FACTUAL` — may be visually usable in theory, but not as factual evidence/reference
+
+## VR-01 — Campanile wooden-pile foundation drawing, 1902
+Source page: Wikimedia Commons, `File:Esselborn2_dib_002.jpg`
+Creator/source context: Josef Durm drawing reproduced in Karl Esselborn construction treatise
+Rights: PUBLIC DOMAIN on current Commons page
+Status: `PRE-CLEARED`
+Intended role:
+- named-case historical visual reference for the Campanile in Piazza San Marco
+- optional supporting still/detail in SH10/SH11 or research-facing explanation
+Truth boundary:
+- case-specific only
+- cannot establish citywide universal pile dimensions/layout
+- peer-reviewed Evidence Pack remains claim authority
+
+## VR-02 — Earliest Venice map, 1380
+Source page: Wikimedia Commons, `File:1st map of Venice, 1380.jpg`
+Rights: PUBLIC DOMAIN / Public Domain Mark on current Commons page
+Status: `PRE-CLEARED`
+Intended role:
+- historical city-context beat / time transition
+Constraint:
+- relatively low source resolution; do not rely on deep zoom for factual micro-detail
+
+## VR-03 — Venice map by Benedetto di Bordone, 1534
+Source page: Wikimedia Commons, `File:Venice Vinegia by Benedetto di Bordone 1534.jpg`
+Rights: PUBLIC DOMAIN on current Commons page
+Status: `PRE-CLEARED`
+Intended role:
+- historical city-form context / map-to-reconstruction transition
+Truth boundary:
+- historical depiction, not a modern survey-grade plan
+
+## VR-04 — Venice map by Nicolas de Fer, 1725
+Source page: Wikimedia Commons, `File:Map of Venice by Nicolas de Fer 1725.jpg`
+Rights: PUBLIC DOMAIN / Public Domain Mark on current Commons page
+Status: `PRE-CLEARED`
+Intended role:
+- high-resolution historical context
+- candidate for controlled map push-in / semantic scale bridge
+
+## VR-05 — Venice map, 1838
+Source page: Wikimedia Commons, `File:Venice 1838 map.jpg`
+Rights: PUBLIC DOMAIN on current Commons page
+Status: `PRE-CLEARED`
+Intended role:
+- high-resolution city-context / map motion candidate
+- easier deep crop than 1380 source
+
+## VR-06 — Grand Canal modern context view
+Source page: Wikimedia Commons, `File:Venice view, Grand Canal, Venice, Italy.jpg`
+Creator: Vyacheslav Argenberg
+Rights: CC BY 4.0 on current Commons page
+Required attribution noted by source page: creator/credit + license link; indicate modifications
+Status: `CONDITIONAL / PRE-CLEARED WITH ATTRIBUTION`
+Intended role:
+- SH01 or SH15 real Venice establishing still / parallax
+- factual identity of modern Venice context, not foundation evidence
+
+## VR-07 — Canal Grande modern context alternative
+Source page: Wikimedia Commons, `File:Canal Grande - Venice, Italy - April 18, 2014 04.jpg`
+Creator: Giorgio Galeotti
+Rights: CC BY 4.0 on current Commons page
+Status: `CONDITIONAL / PRE-CLEARED WITH ATTRIBUTION`
+Intended role:
+- alternate SH01/SH15 modern context still
+Selection rule:
+- use one primary modern still route, not redundant decoration
+
+## VR-08 — 1493 Venice cityscape, Wellcome
+Source page: Wikimedia Commons, Wellcome `Liber chronicarum` Venice cityscape file
+Rights: CC BY 4.0 on current Commons page
+Status: `CONDITIONAL / PRE-CLEARED WITH ATTRIBUTION`
+Intended role:
+- historical cityscape bridge / optional parallax
+Truth boundary:
+- period image/context, not foundation-geometry evidence
+
+## VR-HOLD-01 — Modern Commons assets under CC BY-SA
+Status: `HOLD BY DEFAULT`
+Reason:
+- technically reusable under stated license, but adaptation/share-alike/credit handling must be explicitly approved for the final production package
+- prefer PUBLIC DOMAIN or CC BY 4.0 candidates when equivalent explanatory value exists
+
+## VR-REJECT-01 — Modern unsourced/creator-made “Construction of Venice” illustration
+Source page: Wikimedia Commons, `File:Construction of Venice.png`
+Rights: open Creative Commons license on source page
+Status: `REJECT_FACTUAL`
+Reason:
+- license openness does not make a modern creator illustration an engineering/historical authority
+Allowed only if ever used:
+- clearly illustrative/non-factual mood reference after separate visual QA
+Default decision: do not use; Blender/2D should express the mechanism from Evidence Pack instead
+
+---
+
+# Rights / Credit Gate v1
+
+Before any third-party asset can become `SELECTED` in P6:
+1. source page and exact file revision/date are captured;
+2. creator/source are recorded;
+3. license/public-domain status is recorded;
+4. commercial reuse is compatible with intended publication;
+5. required attribution wording/link and modification disclosure are prepared;
+6. factual role is separately validated — `rights-cleared ≠ evidence-authoritative`;
+7. asset truth/reconstruction role is recorded;
+8. selected file is archived in project-controlled storage later, with source metadata;
+9. final Review & Run Ledger links the selected asset and credit state;
+10. any platform AI disclosure is evaluated separately from copyright/license clearance.
+
+Project preference when explanatory value is equivalent:
+`PUBLIC DOMAIN → CC BY 4.0 → separately approved licensed asset → CC BY-SA/HOLD candidates → rights-unclear REJECT`
+
+This is an operational preference, not a claim that CC BY-SA is unusable.
 
 ---
 
@@ -158,8 +289,9 @@ PASS if:
 # Generation Manifest — Paper Records
 
 ## GM-SH09-v1
-Provider family: Google video / Veo adapter candidate
-Model: UNLOCKED until runtime capability verification
+Execution capability: R-GENERATIVE-VIDEO candidate
+Provider/workbench: UNLOCKED until supervised audition / runtime verification
+Underlying model: UNLOCKED / record `NOT_EXPOSED` if a workbench does not expose it
 Prompt artifact: `PROMPT-SH09-v1` conceptual
 Input assets: approved era/mood refs only
 Shot spec: Visual Plan v1 / SH09
@@ -173,7 +305,7 @@ No provider-specific version is hardcoded by architecture.
 
 ---
 
-# Veo Model-Ready Prompt Contract — SH09 Draft
+# Generative Video Model-Ready Prompt Contract — SH09 Draft
 
 This is a design test, not a generation request.
 
@@ -244,8 +376,9 @@ No hard prices are frozen in design.
 Cost attribution must later track:
 - Blender scene setup
 - Blender render/previs
-- Veo attempts by shot
+- generative video attempts by shot/route
 - accepted vs rejected attempts
+- workbench credits where applicable
 - TTS
 - music
 - external licensed assets
@@ -255,7 +388,7 @@ Critical metric:
 `wasted_expensive_generation_due_to_upstream_change`
 
 Goal for pilot:
-- central explanatory sequence survives with Blender/2D even if Veo unavailable.
+- central explanatory sequence survives with Blender/2D even if all generative cinematic routes are unavailable.
 
 ---
 
@@ -265,11 +398,14 @@ Goal for pilot:
 Do not cosmetic-fix render.
 → Spatial Bible or scene spec correction.
 
-## Veo historical topology drift
+## Generative historical topology drift
 If topology not needed:
 → crop/reframe/re-prompt with less structural visibility.
 If shot accidentally became explanatory:
 → reroute to Blender/2D.
+
+## Rights candidate fails final check
+→ choose another pre-cleared candidate or omit the nonessential asset; never silently substitute an unclear source.
 
 ## Camera orientation fail
 → revise camera rig/transition; do not add narration to explain a confusing camera unless unavoidable.
@@ -284,6 +420,8 @@ If shot accidentally became explanatory:
 
 # Production Gate Verdict
 
-**PASS AS PAPER WORK ORDER**
+**PASS AS PAPER WORK ORDER / RIGHTS PREFLIGHT PARTIAL**
 
-The current contracts are sufficient to dispatch Blender, 2D, Veo-context and Post responsibilities without adding a new orchestra or a full-time modeler.
+The current contracts remain sufficient to dispatch Blender, 2D, generative-context and Post responsibilities without adding a new orchestra or full-time modeler.
+
+Rights preflight now has concrete PUBLIC DOMAIN and CC BY 4.0 candidates for historical maps, a named-case foundation drawing and modern Venice context. This is not yet a final rights manifest: exact downloaded file revisions, final selections and credit strings remain to be frozen only when real media assembly is authorized.
