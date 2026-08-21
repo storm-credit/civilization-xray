@@ -1,5 +1,9 @@
 # Blind-Spot Sweep & Pre-Mortem
 
+> **STATUS NOTE — HISTORICAL DISCOVERY CHECKLIST**  
+> 이 파일은 Phase 0 당시의 원본 맹점 질문/템플릿을 보존한다. 아래 `TBD` pre-mortem 표는 당시 미완료 상태의 기록이며 **현재 프로젝트 상태가 아니다**.  
+> 최신 통합 판정과 완료 증거는 `docs/11-design-closure/FINAL_CROSS_SYSTEM_BLIND_SPOT_CLOSURE_V1.md`를 따른다. 현재 알려진 architecture-blocking / pre-code design blind spot은 그 문서에서 0으로 판정하며, 남은 항목은 명시된 empirical unknown으로 추적한다.
+
 이 문서는 “좋은 아이디어 같다”는 낙관을 깨기 위한 점검표다. 발견한 위험을 전부 기능으로 해결하려 하지 말고, 심각도와 발생 가능성을 보고 필요한 대응만 설계한다.
 
 ## Severity
@@ -168,7 +172,7 @@
 | 롱폼 retention 부족 | TBD | TBD | TBD | TBD | TBD | TBD |
 | 하네스 과설계 | TBD | TBD | TBD | TBD | TBD | TBD |
 
-> 위 표의 TBD는 Discovery에서 실제 가설과 증거로 채운다. TBD가 남아 있는 상태는 “맹점 검토 완료”가 아니다.
+> 위 표의 TBD는 Discovery에서 실제 가설과 증거로 채운다. TBD가 남아 있는 상태는 “맹점 검토 완료”가 아니다. **현재 완료 판정은 이 역사적 템플릿이 아니라 `FINAL_CROSS_SYSTEM_BLIND_SPOT_CLOSURE_V1.md`의 채워진 pre-mortem과 unknown-risk ledger를 사용한다.**
 
 # Completion Rule
 
@@ -181,3 +185,5 @@
 - unknown risk 목록
 - 실제 pre-mortem 표 작성
 - 사용자 또는 Director review
+
+현재 completion evidence: `docs/11-design-closure/FINAL_CROSS_SYSTEM_BLIND_SPOT_CLOSURE_V1.md`.
