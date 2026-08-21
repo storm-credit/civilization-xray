@@ -1,0 +1,16 @@
+# 2026-08-22 — Final Design Completion Gate / Code Lock
+
+- Previous decision / assumption: Architecture/contract design was closed, but the repository did not yet separate “architecture closed” from a formal final pre-code design completion gate. The user additionally required that coding remain prohibited until design/architecture work is fully complete.
+- New decision: Introduce `DESIGN_COMPLETION_GATE_V1` and set current project state to `DESIGN_COMPLETE / CODE_LOCKED` after a final market/positioning, authority, mechanism-class, rights, workbench and repository-consistency audit.
+- Trigger / evidence: User explicitly required continued design/architecture work until completion with no coding. Recent AI-history/reconstruction channel growth also justified one final moat validation to ensure the channel identity is not merely “AI historical video.”
+- Market decision: Reaffirm Civilization X-Ray as **mechanism-first**. History remains a pillar/context; cinematic historical reconstruction is a production layer, not the umbrella product.
+- Four positioning alternatives considered: AI-history recreation-first, historical-engineering-only, megaproject-documentary-first, and mechanism-first Civilization X-Ray. Mechanism-first was reaffirmed.
+- Completion dimensions reviewed: market identity, topic/episode grammar, evidence/reconstruction, Script↔Visual, spatial/camera, production routing, audio/post, rights/disclosure/authenticity, harness/authority/state/stale, mechanism-class coverage, context/provider independence, repository/handoff consistency.
+- Gate result: all design dimensions PASS for pre-code freeze. Direct frame/timeline evidence, actual tool/provider auditions, TTS/music selection, implementation language/framework/storage and physical agent count remain intentionally deferred empirical/runtime choices and are not design blockers.
+- Coding rule: `DESIGN_COMPLETION_GATE = PASS` is necessary but not sufficient for implementation. A separate future explicit user implementation authorization is also required.
+- Prohibited until future explicit authorization: application/runtime code, Python/TypeScript scaffold, LangGraph/agent framework, DB/vector DB implementation, Blender automation scripts, AniJam/Veo/provider integrations, TTS/music integrations, automated publishing, UI/dashboard/deployment code.
+- Impact: `CLAUDE.md`, `README.md`, `docs/00-project/CLAUDE_HANDOFF.md`, `docs/03-content/CONTENT_SYSTEM.md`, `docs/09-validation/EMPIRICAL_VALIDATION_STATUS.md`, new market-moat validation and Design Completion Gate.
+- Architecture impact: No new orchestra, agent, core artifact or runtime layer. This is a final freeze/authority/positioning hardening pass.
+- Reversible?: Gate may return to REVIEW only when new evidence demonstrates a concrete design failure in authority, context, provenance, stale propagation, rights/security, factual/visual integrity, mechanism coverage, market differentiation or measurable quality/cost.
+- Rollback path: Reopen only the failing contract, not the entire architecture.
+- Next boundary: conditional no-code evidence work only. Future implementation requires explicit user authorization followed by Implementation Readiness Review before any code.
