@@ -28,6 +28,7 @@ Purpose: prevent a future session from confusing remaining empirical evidence wo
 | YouTube AI disclosure / monetization / rights handling | PASS / DATED SNAPSHOT | `PUBLISH_RIGHTS_DISCLOSURE_VALIDATION_2026_08_15.md` | additive P6/P7 metadata only |
 | Venice publish-bound source/rights preflight | **PARTIAL / PRE-CLEARED CANDIDATES FOUND** | `pilot-venice/06_PRODUCTION_PACK.md` v1.1 | PD + CC BY candidates; final file/credit freeze deferred |
 | Final Design Completion Gate | **PASS** | `docs/11-design-closure/DESIGN_COMPLETION_GATE_V1.md` | design complete; implementation still locked |
+| Final cross-system blind-spot closure | **PASS FOR PRE-CODE DESIGN** | `docs/11-design-closure/FINAL_CROSS_SYSTEM_BLIND_SPOT_CLOSURE_V1.md` | 0 known architecture/pre-code blockers; empirical unknowns tracked |
 | Actual Blender procedural scene/readability performance | DEFERRED TO PROTOTYPE | fixed pilot input required | implementation evidence |
 | Actual direct-provider video continuity/cost/usable-output ratio | DEFERRED TO PROTOTYPE | provider audition required | model routing thresholds only |
 | Actual AniJam workbench usable-output/provenance/cost benefit | DEFERRED TO SUPERVISED AUDITION | fixed cinematic work order required | workbench promotion threshold only |
@@ -47,6 +48,7 @@ Current state:
 
 `Architecture CLOSED` means the required responsibility/artifact/authority topology is stable.
 `Design Completion Gate PASS` means the pre-code design program has no currently known blocking design gap.
+`Final cross-system blind-spot closure PASS` means the original discovery blind-spot checklist has been reconciled with later full-studio, Venice, storyboard, market, tool and rights audits; no known P0/P1 design blocker remains.
 
 Neither statement is permission to code.
 
@@ -66,7 +68,7 @@ The following are optional/conditional evidence work, not blockers to design com
 6. Run another paper episode only if new evidence proves a mechanism class is still not represented by current static/flow/alignment/failure/dynamic-routing coverage.
 7. Reopen a specific design boundary only if real evidence breaks it.
 
-The dynamic-routing test closed the previously identified discrete state/routing gap. The AI-history market review reaffirmed that history is a pillar/context while mechanism remains the channel identity. AniJam does not expose a new architecture gap; it is an execution-route candidate. Venice rights preflight confirms that at least some historical/mechanism/context assets can be sourced through Public Domain or attribution-compatible routes without weakening Evidence Pack authority.
+The dynamic-routing test closed the previously identified discrete state/routing gap. The AI-history market review reaffirmed that history is a pillar/context while mechanism remains the channel identity. AniJam does not expose a new architecture gap; it is an execution-route candidate. Venice rights preflight confirms that at least some historical/mechanism/context assets can be sourced through Public Domain or attribution-compatible routes without weakening Evidence Pack authority. Final blind-spot closure keeps mobile readability, novice comprehension, actual retention, real cost/throughput, final rights freeze and second-pilot generalization as explicit empirical unknowns rather than pretending documentation solved them.
 
 Do **not** fill time by adding new agents, orchestras, artifact types, databases, workbench-specific pipelines, arbitrary paper pilots or framework choices.
 
