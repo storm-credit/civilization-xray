@@ -9,9 +9,11 @@ Civilization X-Ray는 Phase 1에서 상시 인간 3D 모델러를 기본 전제�
 기본 제작 구조는 다음과 같다.
 
 > **Blender = spatial truth / deterministic camera / reusable geometry backbone**  
-> **Google video generation = cinematic reconstruction / atmosphere / human activity**  
+> **Generative cinematic video = reconstruction / atmosphere / human activity, via direct provider or supervised workbench**  
 > **2D motion graphics = diagrams / maps / abstract mechanisms**  
 > **Human modeler = exception path only**
+
+Google video models remain direct-provider candidates behind a capability adapter. AniJam is an optional supervised workbench candidate under the same Generative Cinematic Video responsibility; it is not a new director, agent, orchestra or spatial authority.
 
 Higgsfield는 필수 dependency에서 제외한다. 비용 또는 특정 연출 이점이 명확해질 때만 optional adapter로 검토한다.
 
@@ -199,13 +201,15 @@ G3 requires an explicit value justification.
 
 # 4. Camera System
 
-Camera design is not delegated blindly to a generative video model when spatial continuity matters.
+Camera design is not delegated blindly to a generative video model or creative workbench when spatial continuity matters.
 
 ## Camera Ownership Rule
 
 If camera motion itself teaches spatial relationship, use deterministic camera control.
 
-If camera motion is mainly cinematic mood, generative video may own the move.
+If camera motion is mainly cinematic mood, generative video may own the move within the approved Visual Work Order.
+
+A workbench-generated camera plan is never canonical by itself; the Video Director / Visual Plan remains the authority.
 
 ---
 
@@ -316,7 +320,7 @@ Best implementation:
 Cloud/smoke/water/crowd/light-driven transition where exact geometry is not evidence.
 
 Best implementation:
-- Google video generation candidate
+- generative cinematic video candidate via direct provider or supervised workbench
 
 Rule:
 Never use an impressive transition if it causes the viewer to lose spatial orientation during an explanation.
@@ -336,7 +340,7 @@ Select when:
 
 Output can be final render or compositing layer.
 
-## R-GOOGLE-VIDEO — Generative Cinematic Layer
+## R-GENERATIVE-VIDEO — Generative Cinematic Layer
 
 Select when:
 - historical people/activity
@@ -345,9 +349,40 @@ Select when:
 - visual reconstruction where exact topology is not presented as evidence
 - cinematic bridge
 
-Current Google video model choice must remain behind a capability adapter because model guidance and availability change over time.
+This is a **capability route**, not a permanent vendor/model choice.
 
-As of the current design review, Google documents Gemini video generation with Gemini Omni Flash as a general default and Veo 3.1 for capabilities such as scene extension and last-frame control. If the user's AI Studio access/quota makes Veo 3.1 preferable, the router may select it without changing the episode architecture.
+### R-GEN-DIRECT — Direct Provider Adapter
+
+Use when:
+- automation/programmatic execution matters;
+- exact provider/model provenance matters;
+- provider-specific controls are required;
+- retry/cost/job lifecycle should be machine-observable;
+- reproducibility requirements are stronger.
+
+Google video models remain current candidates behind this adapter. Model/version guidance must be refreshed before implementation.
+
+### R-GEN-WORKBENCH — Optional Supervised Creative Workbench
+
+Use when:
+- rapid multi-model audition has real value;
+- multi-scene character/style consistency is useful;
+- historical people/activity/atmosphere spans several shots;
+- manual supervision is acceptable;
+- reduced app-switching improves production speed.
+
+Current candidate: **AniJam**, validated as `W0 OPTIONAL MANUAL/ASSISTED WORKBENCH` in `docs/09-validation/ANIJAM_CAPABILITY_VALIDATION_2026_08_22.md`.
+
+Rules:
+- workbench receives approved Visual Work Orders by default, not authority to rewrite the full Story/Visual Plan;
+- workbench-generated scene breakdown is NON-CANON unless explicitly promoted by the upstream owner;
+- exact topology/spatial truth remains Blender/2D-owned;
+- final timeline remains Audio/Post-owned;
+- underlying provider/model is recorded when exposed; otherwise explicitly record `NOT_EXPOSED` rather than guessing;
+- opaque workbench output cannot become factual/spatial authority;
+- public runtime API/automation support must be separately verified before any automated integration.
+
+Full contract: `docs/11-design-closure/GENERATIVE_WORKBENCH_ROUTING_ADDENDUM_V1.md`.
 
 ## R-2D-MOTION
 
@@ -370,15 +405,17 @@ Select when:
 
 ---
 
-# 9. No-Higgsfield Baseline
+# 9. No Single-SaaS Baseline
 
-Baseline production must be achievable with:
-- Blender
-- Google video-generation access available to the project
-- 2D/compositing/editorial tools
-- approved assets
+Baseline production must remain achievable with:
+- Blender;
+- 2D/compositing/editorial tools;
+- approved assets;
+- at least one valid generative cinematic route when such footage is actually needed.
 
-Higgsfield may later be evaluated as an optional convenience layer, but no core camera grammar, asset state, or episode artifact may depend on it.
+No single generative SaaS—including AniJam, Higgsfield, Veo or any other named product—may become a mandatory dependency of the episode architecture.
+
+Direct-provider capability must remain available for shots whose automation/provenance/control requirements are not satisfied by a supervised workbench.
 
 ---
 
@@ -405,9 +442,9 @@ Human modeler is approved only when the expected quality/reuse value beats the m
 - city context: existing/low-detail environment + composite
 - pile field: M1 procedural cylinders/grid
 - soil/water section: M1 + 2D overlays
-- historical pile-driving workers: Google video generation
+- historical pile-driving workers: R-GENERATIVE-VIDEO; AniJam workbench or direct provider candidate
 - camera descent water → mud → piles: Blender C04/C05
-- close historical atmosphere: Google video
+- close historical atmosphere: R-GENERATIVE-VIDEO
 
 Human modeler: probably unnecessary.
 
@@ -415,7 +452,7 @@ Human modeler: probably unnecessary.
 
 - pyramid mass/chambers: M1 procedural geometry
 - cutaway: Blender
-- workers / transport reconstruction: Google video
+- workers / transport reconstruction: R-GENERATIVE-VIDEO
 - decorative close-up only if story needs it: M2/M3/M4 by gate
 
 Human modeler: normally unnecessary.
@@ -440,6 +477,8 @@ AI 3D candidates are not locked:
 
 The project must never choose an AI 3D dependency solely because it is technically free to download.
 
+AniJam is currently classified as an optional supervised generative workbench. Its public product pages support script/image/audio-based animation, scene breakdown, consistency/motion/lip-sync/timeline workflows and multi-provider creative use, but a stable public runtime API suitable for harness automation was not verified in the 2026-08-22 review. Therefore no implementation dependency is locked.
+
 ---
 
 # 13. Pilot Validation
@@ -459,7 +498,14 @@ For each compare:
 - continuity reliability
 - final explanatory quality
 
-Only then set Phase 1 modeler/AI-3D policy defaults.
+For generative cinematic routing, use one fixed non-factual historical-activity work order to compare:
+- direct provider execution;
+- AniJam supervised workbench execution;
+- still/composite fallback.
+
+Measure usable-output ratio, continuity benefit, revision burden, effective cost, provenance completeness and time saved.
+
+Only then promote a workbench beyond optional status.
 
 ---
 
@@ -470,7 +516,10 @@ The modeling/camera strategy passes when:
 - exact explanatory shots have deterministic spatial control
 - camera moves are reproducible and reusable
 - generative video is used where its uncertainty does not corrupt factual geometry
+- an optional workbench cannot become a shadow Story/Visual/Post authority
+- direct-provider routing remains available when automation/provenance/control requires it
+- workbench attempts preserve tool/input/output/rights provenance and explicitly mark non-exposed model identity
 - 2D is selected when clearer than 3D
 - expensive manual modeling is justified by explicit gates
 - model/tool/license provenance is recorded
-- no paid camera platform is a mandatory dependency
+- no paid camera/video platform is a mandatory dependency
