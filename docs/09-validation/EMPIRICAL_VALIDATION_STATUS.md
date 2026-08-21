@@ -2,9 +2,10 @@
 
 Status date: **2026-08-22**  
 Architecture: **CLOSED**  
-Implementation: **NOT STARTED / NOT AUTHORIZED**
+Design Completion Gate: **PASS — COMPLETE FOR PRE-CODE FREEZE**  
+Implementation: **NOT STARTED / NOT AUTHORIZED / CODE LOCKED**
 
-Purpose: prevent a future session from confusing remaining empirical evidence work with missing architecture design.
+Purpose: prevent a future session from confusing remaining empirical evidence work with missing architecture design, and prevent implementation from starting merely because architecture is closed.
 
 | Validation area | Status | Evidence / document | Effect on architecture |
 |---|---|---|---|
@@ -21,9 +22,11 @@ Purpose: prevent a future session from confusing remaining empirical evidence wo
 | Short-form vs long-form reference roles | PASS / SNAPSHOT | `REFERENCE_ROLE_MATRIX_V1.md` | no topology change |
 | 10-video transcript/text corpus | **PASS / 10 OF 10** | `REFERENCE_TRANSCRIPT_CORPUS_V1.md` | script grammar validated/refined |
 | 10-video frame/timeline corpus | **PARTIAL / UNOBSERVED GAPS** | direct video-frame evidence not complete | camera frequency must not be assumed |
+| AI-history / reconstruction market moat | **PASS / MECHANISM-FIRST REAFFIRMED** | `AI_HISTORY_MARKET_MOAT_VALIDATION_2026_08_22.md` | positioning hardening only |
 | Blender / Google video / TTS / music official capabilities | PASS / DATED SNAPSHOT | `TOOL_CAPABILITY_REGISTRY_2026_08_15.md` | adapter strategy strengthened |
 | AniJam generative workbench fit | **PASS FOR SUPERVISED AUDITION / W0** | `ANIJAM_CAPABILITY_VALIDATION_2026_08_22.md` + `GENERATIVE_WORKBENCH_ROUTING_ADDENDUM_V1.md` | optional workbench subroute only; no new agent/artifact |
 | YouTube AI disclosure / monetization / rights handling | PASS / DATED SNAPSHOT | `PUBLISH_RIGHTS_DISCLOSURE_VALIDATION_2026_08_15.md` | additive P6/P7 metadata only |
+| Final Design Completion Gate | **PASS** | `docs/11-design-closure/DESIGN_COMPLETION_GATE_V1.md` | design complete; implementation still locked |
 | Actual Blender procedural scene/readability performance | DEFERRED TO PROTOTYPE | fixed pilot input required | implementation evidence |
 | Actual direct-provider video continuity/cost/usable-output ratio | DEFERRED TO PROTOTYPE | provider audition required | model routing thresholds only |
 | Actual AniJam workbench usable-output/provenance/cost benefit | DEFERRED TO SUPERVISED AUDITION | fixed cinematic work order required | workbench promotion threshold only |
@@ -35,25 +38,59 @@ Purpose: prevent a future session from confusing remaining empirical evidence wo
 
 ---
 
-# Remaining Work Before Coding Is Authorized
+# Design Completion State
 
-Coding is not required to continue the following:
+Current state:
 
-1. Complete **frame/timeline** evidence for the reference corpus only when video frames are directly observable; transcript collection itself is complete for the selected 10-item corpus.
-2. Refresh volatile tool/platform policy snapshots when new evidence appears.
-3. Run a supervised tool audition when a real candidate such as AniJam may reduce a known production burden; do not write integration code merely to test a UI workbench.
-4. Audit a new external reuse repository only when it plausibly closes a known gap.
-5. Run another paper episode only if new evidence proves a mechanism class is still not represented by the current static/flow/alignment/failure/dynamic-routing coverage.
+> **DESIGN_COMPLETE / CODE_LOCKED**
 
-The dynamic-routing test closes the previously identified discrete state/routing gap. AniJam does not expose a new architecture gap; it is an execution-route candidate.
+`Architecture CLOSED` means the required responsibility/artifact/authority topology is stable.
+`Design Completion Gate PASS` means the pre-code design program has no currently known blocking design gap.
 
-Do **not** fill time by adding new agents, orchestras, artifact types, databases, workbench-specific pipelines or framework choices.
+Neither statement is permission to code.
+
+Implementation requires a **future explicit user authorization** after this design freeze.
 
 ---
 
-# Work That Belongs Immediately Before Coding
+# Remaining No-Code Work
 
-When the user explicitly authorizes implementation:
+The following are optional/conditional evidence work, not blockers to design completion:
+
+1. Complete **frame/timeline** evidence for the reference corpus only when video frames are directly observable.
+2. Refresh volatile tool/platform policy snapshots when new evidence appears.
+3. Run a supervised tool audition when a candidate such as AniJam may reduce a known production burden; do not write integration code merely to test a UI workbench.
+4. Audit a new external reuse repository only when it plausibly closes a known gap.
+5. Run another paper episode only if new evidence proves a mechanism class is still not represented by current static/flow/alignment/failure/dynamic-routing coverage.
+6. Reopen a specific design boundary only if real evidence breaks it.
+
+The dynamic-routing test closed the previously identified discrete state/routing gap. The AI-history market review reaffirmed that history is a pillar/context while mechanism remains the channel identity. AniJam does not expose a new architecture gap; it is an execution-route candidate.
+
+Do **not** fill time by adding new agents, orchestras, artifact types, databases, workbench-specific pipelines, arbitrary paper pilots or framework choices.
+
+---
+
+# Coding Lock
+
+Until a future explicit user authorization, prohibited:
+
+- application/runtime code;
+- Python/TypeScript project scaffold;
+- LangGraph/agent framework setup;
+- database implementation;
+- Blender automation scripts;
+- AniJam/Veo/Google/provider API integration;
+- TTS/music integrations;
+- automated publishing;
+- deployment/UI/dashboard implementation.
+
+This remains true even though `DESIGN_COMPLETION_GATE = PASS`.
+
+---
+
+# What Happens Only After Future Coding Authorization
+
+When the user explicitly authorizes implementation in a later instruction:
 
 1. Implementation Readiness Review.
 2. Pre-mortem for runtime implementation.
@@ -68,15 +105,17 @@ AniJam may be promoted from `W0 OPTIONAL MANUAL/ASSISTED WORKBENCH` only with me
 
 ---
 
-# Stop Rule
+# Stop / Reopen Rule
 
-A new empirical finding may change a specific contract only when it shows a concrete failure in:
+A new finding may reopen a specific design contract only when it shows a concrete failure in:
 - authority boundary;
 - context size;
 - provenance;
 - stale propagation;
 - rights/security;
 - factual/visual integrity;
+- mechanism-class coverage;
+- market/editorial differentiation;
 - measurable quality/cost.
 
-Otherwise record the finding as a threshold/provider/prompt/workbench lesson and keep the architecture closed.
+Otherwise record the finding as a threshold/provider/prompt/workbench/market lesson and keep the design frozen.
