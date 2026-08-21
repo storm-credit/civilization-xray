@@ -12,6 +12,7 @@
 - artifact 계약이 필요하면 `docs/11-design-closure/CORE_ARTIFACT_CONTRACTS_V1.md`와 최신 additive contract를 읽는다.
 - camera/transition 작업이면 `CAMERA_TRANSITION_GRAMMAR_V1.md`, audio/post 작업이면 `AUDIO_TIMELINE_CONTRACT_V1.md`를 읽는다.
 - generative workbench/AniJam 관련이면 `GENERATIVE_WORKBENCH_ROUTING_ADDENDUM_V1.md`와 `ANIJAM_CAPABILITY_VALIDATION_2026_08_22.md`를 읽는다.
+- agent/tool/context exposure 작업이면 `docs/02-harness/MINIMUM_ACTION_AGENT_OS_ADOPTION.md`를 읽고 bounded-local-action 규칙을 적용한다.
 - 사용자가 이미 답했거나 저장소에 명시된 질문을 다시 묻지 않는다.
 - 정말 필요한 컨텍스트가 없고 그 누락이 의사결정/정확도에 materially 영향을 줄 때만 질문한다.
 - 사용자가 “자동으로 계속 진행”을 요청한 상태라면, 비차단 가정은 명시적으로 기록하고 진행한다.
@@ -135,6 +136,22 @@ AI 역사 재현, 타임트래블 vlog, cinematic history 자체는 umbrella가 
    - 전체 Evidence Pack/Story Pack/프로젝트를 모든 실행자에게 넣지 않는다.
    - approved work order + linked claims + relevant locks + success/stop conditions 중심으로 compile한다.
 
+18. **Bounded local action space — Minimum Action Agent OS**
+   - **에이전트 총수에는 고정 상한을 두지 않는다.** 프로젝트에 실제 경계가 있으면 5개를 넘어도 된다.
+   - 제한 대상은 전역 agent count가 아니라 **각 reasoning node / active agent가 한 번에 직접 선택할 수 있는 활성 action surface**다.
+   - 기본 정책: 한 node의 의미 있는 directly selectable action은 **5개 이하**를 목표로 한다.
+   - action에는 tool, subagent, MCP action, skill invocation, peer callable capability를 포함한다.
+   - `<=5`는 운영정책이지 Anthropic/OpenAI/API의 기술적 hard limit가 아니다.
+   - 5개를 넘으면 unrelated responsibility 혼합, router/specialist 분리, workflow/skill 묶음, read/write/execute 권한 분리, task 필요성을 먼저 점검한다.
+   - 그래도 5개 초과가 더 안전하고 단순하면 허용하되 **이유·범위·기간을 명시적 예외로 기록**한다.
+   - Capability Registry 전체가 5개를 넘는 것은 허용된다. 한 node에 동시에 노출되는 active peer choices만 bounded한다.
+   - 숫자를 맞추기 위해 agent를 의미 없이 쪼개지 않는다. 새 agent는 distinct tool/permission, context, independent evaluation, evidence regime, failure isolation 같은 실제 경계가 있을 때만 만든다.
+
+19. **Agent / Prompt Anti-Pattern Guard**
+   - serious dispatch 전에 `flat mega-toolbelt`, `agent-count fetish`, `fake <=5 compliance`, `context soup`, `shadow authority`, `fake independent review`, `blind retry`, `vendor-shaped workflow`, `meta-prompt ceremony`, `unbounded router`를 점검한다.
+   - 문제가 있으면 기본 순서 `KEEP → PATCH → CUT → ROUTE/SPLIT`으로 해결하고 실제 evidence가 있을 때만 `NEW DESIGN`한다.
+   - 상세 정의와 예시는 `docs/02-harness/MINIMUM_ACTION_AGENT_OS_ADOPTION.md`를 따른다.
+
 ## 3. Meta-Prompting Protocol
 
 기본 사이클:
@@ -230,6 +247,7 @@ Harness must preserve:
 - prompt/script/visual versioning
 - reproducibility
 - rights/security/provenance
+- bounded local action/tool exposure
 
 Closure and later additive validations confirmed this topology with Venice, dynamic routing, rights/disclosure and optional workbench cases. New evidence is required to change it.
 
@@ -258,6 +276,7 @@ Closure and later additive validations confirmed this topology with Venice, dyna
 - `obra/superpowers`
 - `Egonex-AI/Understand-Anything` (former Lum1104 lineage)
 - `rohitg00/agentmemory`
+- `storm-credit/minimum-action-agent-os`
 
 적용 질문:
 - Karpathy Guidelines → 가정/범위/단순성/완료 증거
@@ -265,8 +284,9 @@ Closure and later additive validations confirmed this topology with Venice, dyna
 - claude-video → transcript + frame/scene 분석
 - Understand-Anything → 관계/의존성 구조화
 - agentmemory → 장기 기억/실패 학습/context retrieval
+- Minimum Action Agent OS → bounded local action space, minimum context/tool exposure, real-boundary agent splitting, anti-pattern guard
 
-상세 adopt/do-not-adopt는 `docs/00-project/REFERENCE_METHODS.md`.
+상세 adopt/do-not-adopt는 `docs/00-project/REFERENCE_METHODS.md` 및 `docs/02-harness/MINIMUM_ACTION_AGENT_OS_ADOPTION.md`.
 
 Internal reuse:
 - `storm-credit/askanything_video_generator` → provider infrastructure 등 audit에서 승인한 부분만.
@@ -301,6 +321,7 @@ Adjacent market/reference rule:
 - Visual architecture: PASS
 - Risk/pre-mortem: PASS
 - Harness architecture: PASS
+- Minimum Action Agent OS working-method adoption: PASS / bounded local action policy
 - 7 core artifact contract: PASS / paper-tested
 - Camera/transition grammar: PASS for pre-code freeze
 - Audio/Post timeline contract: PASS for pre-code freeze
@@ -354,11 +375,13 @@ Non-negotiable boundaries:
 - Visual QA: creator와 논리적으로 분리, reject 권한.
 - specialist/workbench가 hard lock/source certainty/reconstruction boundary를 임의 변경 금지.
 - 동일 실패 입력 blind retry 금지.
+- 각 node의 active peer tool/action surface는 기본 `<=5`; provider/tool 증가는 router/hierarchy 뒤로 배치한다.
 - AniJam/Higgsfield/Veo/특정 SaaS는 core mandatory dependency가 아님.
 
 Relevant contracts:
 - `docs/11-design-closure/CAMERA_TRANSITION_GRAMMAR_V1.md`
 - `docs/11-design-closure/GENERATIVE_WORKBENCH_ROUTING_ADDENDUM_V1.md`
+- `docs/02-harness/MINIMUM_ACTION_AGENT_OS_ADOPTION.md`
 
 ## 11. Full Studio Orchestration
 
@@ -391,6 +414,7 @@ Rules:
 - critical FAIL은 평균 점수로 상쇄하지 않음.
 - mass-produced / interchangeable episode 패턴은 Release/Quality failure 후보.
 - music-only/thumbnail-only/Blender-only/AniJam-only/prompt-only orchestra를 기본 추가하지 않음.
+- 에이전트 총수는 제한하지 않지만 각 local reasoning node의 direct action choices는 기본 5개 이하로 유지한다.
 
 Closure audio contract:
 - `docs/11-design-closure/AUDIO_TIMELINE_CONTRACT_V1.md`
