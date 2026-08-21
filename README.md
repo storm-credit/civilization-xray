@@ -5,29 +5,35 @@
 ## Current Status
 
 **Architecture / contract design: CLOSED**  
+**Design Completion Gate: PASS — PRE-CODE FREEZE**  
+**Project state: DESIGN_COMPLETE / CODE_LOCKED**  
 **Harness: Stage-Gated Artifact Blackboard + Thin Director**  
-**7 core physical artifacts: locked for Phase 1 planning**  
+**7 core physical artifacts: locked for pre-code freeze**  
 **Venice end-to-end paper run: PASS ON PAPER**  
 **Dynamic discrete-routing baggage paper test: PASS ON PAPER**  
 **10-video transcript/text benchmark: PASS / 10 OF 10**  
-**10-video direct frame/timeline benchmark: PARTIAL / unobserved gaps remain**  
-**Tool/provider capability snapshot: validated 2026-08-15, volatile**  
-**YouTube AI disclosure/rights snapshot: validated 2026-08-15, volatile**  
+**10-video direct frame/timeline benchmark: PARTIAL / non-blocking**  
+**AI-history market moat: PASS / mechanism-first identity reaffirmed**  
+**AniJam: W0 optional supervised workbench candidate**  
 **Implementation: NOT STARTED / NOT AUTHORIZED**
 
-Architecture/contract design is now **closed and frozen**. Remaining uncertainty is empirical/runtime evidence, not another missing design layer.
+Architecture/contract design and the pre-code design program are now **complete and frozen**. Remaining uncertainty is empirical/runtime evidence, not another missing design layer.
+
+**Important: design completion is not implementation permission. Coding remains prohibited until the user later gives an explicit implementation authorization.**
 
 Key closure results:
 1. 7 physical core artifacts have field-level contracts.
-2. Camera/Transition Grammar v1 is locked for Phase 1 planning.
-3. Audio/Post Timeline Contract v1 is locked for Phase 1 planning.
+2. Camera/Transition Grammar v1 is locked for pre-code freeze.
+3. Audio/Post Timeline Contract v1 is locked.
 4. `VX-PILOT-001 Venice Foundations` ran end-to-end through all four orchestras on paper.
 5. factual-scope and wording-only fault injections validated field-aware stale propagation on paper.
 6. 32 narration units compressed to 15 visual work orders rather than one generated clip per sentence.
 7. one reusable Blender explanatory module + 2D can carry the Venice pilot’s central mechanism.
 8. generative video remains optional cinematic context, not factual-geometry authority.
 9. dynamic discrete routing/stateful systems were additionally tested with a generic airport baggage journey; no new orchestra, artifact or continuity class was required.
-10. no fifth creative orchestra, eighth default core artifact, full-time modeler or implementation framework lock is justified before prototype evidence.
+10. AniJam fits only as an optional supervised workbench subroute; it does not own Story, Visual Plan, spatial truth or final timeline.
+11. current AI-history/reconstruction market growth does not justify pivoting into an AI-history channel; mechanism-first positioning is the moat.
+12. no fifth creative orchestra, eighth default core artifact, full-time modeler or implementation framework lock is justified before prototype evidence.
 
 ## Core Direction
 
@@ -44,6 +50,12 @@ Key closure results:
 > **“이 영상에서 X-Ray로 보여줄, 눈에 보이지 않는 원리는 무엇인가?”**
 
 이를 답할 수 없는 소재는 다루지 않는다.
+
+History rule:
+
+> **History is a context/pillar. Mechanism is the channel identity.**
+
+AI 역사 재현 장면이 없어도 episode thesis가 살아 있어야 한다.
 
 ## Selected Harness
 
@@ -80,9 +92,11 @@ Cross-cutting:
 Visual production baseline:
 - Blender: deterministic spatial truth / registered camera / cutaway / explode / reassembly
 - 2D: maps / diagrams / elevation / causal flow / state/routing explanation
-- Google/generative video capability: people / atmosphere / historical reconstruction / cinematic bridge where exact topology is not evidence
+- Generative Cinematic Video: people / atmosphere / historical reconstruction / cinematic bridge where exact topology is not evidence
+  - Direct Provider Adapter(s)
+  - Optional supervised workbench such as AniJam
 - Human modeler: escalation path only
-- Higgsfield: not a required dependency
+- no named camera/video SaaS is a required dependency
 
 Provider/model names are implementation-time capability-registry data, not project constitution.
 
@@ -91,6 +105,7 @@ Provider/model names are implementation-time capability-registry data, not proje
 Start here:
 - [`CLAUDE.md`](CLAUDE.md)
 - [`docs/09-validation/EMPIRICAL_VALIDATION_STATUS.md`](docs/09-validation/EMPIRICAL_VALIDATION_STATUS.md)
+- [`docs/11-design-closure/DESIGN_COMPLETION_GATE_V1.md`](docs/11-design-closure/DESIGN_COMPLETION_GATE_V1.md)
 - [`docs/00-project/CLAUDE_HANDOFF.md`](docs/00-project/CLAUDE_HANDOFF.md)
 - [`docs/00-project/FINAL_DESIGN_BLUEPRINT.md`](docs/00-project/FINAL_DESIGN_BLUEPRINT.md)
 - [`docs/11-design-closure/DESIGN_CLOSURE_0_6_FINAL.md`](docs/11-design-closure/DESIGN_CLOSURE_0_6_FINAL.md)
@@ -99,6 +114,7 @@ Start here:
 - [`docs/11-design-closure/CORE_ARTIFACT_CONTRACTS_V1.md`](docs/11-design-closure/CORE_ARTIFACT_CONTRACTS_V1.md)
 - [`docs/11-design-closure/DYNAMIC_SYSTEM_CONTRACT_ADDENDUM_V1.md`](docs/11-design-closure/DYNAMIC_SYSTEM_CONTRACT_ADDENDUM_V1.md)
 - [`docs/11-design-closure/PUBLISH_DISCLOSURE_CONTRACT_ADDENDUM_V1.md`](docs/11-design-closure/PUBLISH_DISCLOSURE_CONTRACT_ADDENDUM_V1.md)
+- [`docs/11-design-closure/GENERATIVE_WORKBENCH_ROUTING_ADDENDUM_V1.md`](docs/11-design-closure/GENERATIVE_WORKBENCH_ROUTING_ADDENDUM_V1.md)
 - [`docs/11-design-closure/CAMERA_TRANSITION_GRAMMAR_V1.md`](docs/11-design-closure/CAMERA_TRANSITION_GRAMMAR_V1.md)
 - [`docs/11-design-closure/AUDIO_TIMELINE_CONTRACT_V1.md`](docs/11-design-closure/AUDIO_TIMELINE_CONTRACT_V1.md)
 - [`docs/11-design-closure/pilot-venice/`](docs/11-design-closure/pilot-venice/)
@@ -106,7 +122,9 @@ Start here:
 ### Empirical validation
 - [`docs/09-validation/REFERENCE_ROLE_MATRIX_V1.md`](docs/09-validation/REFERENCE_ROLE_MATRIX_V1.md)
 - [`docs/09-validation/REFERENCE_TRANSCRIPT_CORPUS_V1.md`](docs/09-validation/REFERENCE_TRANSCRIPT_CORPUS_V1.md)
+- [`docs/09-validation/AI_HISTORY_MARKET_MOAT_VALIDATION_2026_08_22.md`](docs/09-validation/AI_HISTORY_MARKET_MOAT_VALIDATION_2026_08_22.md)
 - [`docs/09-validation/TOOL_CAPABILITY_REGISTRY_2026_08_15.md`](docs/09-validation/TOOL_CAPABILITY_REGISTRY_2026_08_15.md)
+- [`docs/09-validation/ANIJAM_CAPABILITY_VALIDATION_2026_08_22.md`](docs/09-validation/ANIJAM_CAPABILITY_VALIDATION_2026_08_22.md)
 - [`docs/09-validation/PUBLISH_RIGHTS_DISCLOSURE_VALIDATION_2026_08_15.md`](docs/09-validation/PUBLISH_RIGHTS_DISCLOSURE_VALIDATION_2026_08_15.md)
 - [`docs/09-validation/MECHANISM_CLASS_GAP_AUDIT.md`](docs/09-validation/MECHANISM_CLASS_GAP_AUDIT.md)
 - [`docs/09-validation/AIRPORT_BAGGAGE_DYNAMIC_ROUTING_PAPER_TEST.md`](docs/09-validation/AIRPORT_BAGGAGE_DYNAMIC_ROUTING_PAPER_TEST.md)
@@ -130,11 +148,15 @@ Start here:
 ## Design Principles
 
 - Design before implementation
+- Design Completion PASS does not authorize coding
 - Context dump before prompting
+- Deep blackboard, small execution context
 - Ask only for truly missing context; do not repeat answered questions
 - Four genuinely different alternatives for consequential decisions
 - Blind-spot sweep and pre-mortem before consequential locks
 - Evidence before completion claims
+- KEEP → PATCH → CUT → NEW DESIGN
+- Mechanism-first identity; history is a pillar/context
 - Script ↔ Visual alignment over decorative AI footage
 - Geometry when topology is explanatory evidence
 - 2D diagrams when they explain better than 3D
@@ -148,6 +170,7 @@ Start here:
 - no silent fallback
 - retry requires causal input change
 - rights / AI disclosure / authenticity are Release Gate concerns
+- anti-template / non-interchangeable episode substance
 - record where/why plans changed and their impact
 
 ## References
@@ -163,18 +186,25 @@ These are workflow/reasoning references, not code to copy wholesale.
 
 ## Next Boundary
 
+The design program is complete for pre-code freeze.
+
 Without implementation authorization, further work is justified only by new direct evidence, for example:
 - direct frame/timeline benchmark evidence that is actually observable
 - materially changed source/rights/platform policy
 - materially changed provider capability
+- supervised workbench audition without integration code
 - a demonstrated mechanism/contract gap not already represented by current static/flow/alignment/failure/dynamic-routing coverage
 
 Do **not** create more agents, orchestras, artifacts, framework choices or paper pilots merely to continue design activity.
 
-When implementation is explicitly authorized, the next sequence is:
+When implementation is explicitly authorized in a future instruction, the next sequence is:
 
 > **Implementation Readiness Review → runtime pre-mortem → 4 minimal implementation scopes → tool auditions/technology choices → Minimal Supervised Prototype plan → code**
 
-## Implementation Lock
+## Coding Lock
 
-Do not add application code, automation code, API clients, agent-framework scaffolding, Blender runtime scripts, deployment configuration, publishing automation, or vendor-specific production integrations until implementation is explicitly authorized.
+Current state:
+
+> **DESIGN_COMPLETE / CODE_LOCKED**
+
+Do not add application code, automation code, API clients, agent-framework scaffolding, Blender runtime scripts, DB implementation, deployment configuration, publishing automation, UI/dashboard code, or vendor-specific production integrations until implementation is explicitly authorized by the user in a future instruction.
