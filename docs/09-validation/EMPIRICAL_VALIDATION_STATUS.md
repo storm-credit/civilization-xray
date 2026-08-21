@@ -26,6 +26,7 @@ Purpose: prevent a future session from confusing remaining empirical evidence wo
 | Blender / Google video / TTS / music official capabilities | PASS / DATED SNAPSHOT | `TOOL_CAPABILITY_REGISTRY_2026_08_15.md` | adapter strategy strengthened |
 | AniJam generative workbench fit | **PASS FOR SUPERVISED AUDITION / W0** | `ANIJAM_CAPABILITY_VALIDATION_2026_08_22.md` + `GENERATIVE_WORKBENCH_ROUTING_ADDENDUM_V1.md` | optional workbench subroute only; no new agent/artifact |
 | YouTube AI disclosure / monetization / rights handling | PASS / DATED SNAPSHOT | `PUBLISH_RIGHTS_DISCLOSURE_VALIDATION_2026_08_15.md` | additive P6/P7 metadata only |
+| Venice publish-bound source/rights preflight | **PARTIAL / PRE-CLEARED CANDIDATES FOUND** | `pilot-venice/06_PRODUCTION_PACK.md` v1.1 | PD + CC BY candidates; final file/credit freeze deferred |
 | Final Design Completion Gate | **PASS** | `docs/11-design-closure/DESIGN_COMPLETION_GATE_V1.md` | design complete; implementation still locked |
 | Actual Blender procedural scene/readability performance | DEFERRED TO PROTOTYPE | fixed pilot input required | implementation evidence |
 | Actual direct-provider video continuity/cost/usable-output ratio | DEFERRED TO PROTOTYPE | provider audition required | model routing thresholds only |
@@ -60,11 +61,12 @@ The following are optional/conditional evidence work, not blockers to design com
 1. Complete **frame/timeline** evidence for the reference corpus only when video frames are directly observable.
 2. Refresh volatile tool/platform policy snapshots when new evidence appears.
 3. Run a supervised tool audition when a candidate such as AniJam may reduce a known production burden; do not write integration code merely to test a UI workbench.
-4. Audit a new external reuse repository only when it plausibly closes a known gap.
-5. Run another paper episode only if new evidence proves a mechanism class is still not represented by current static/flow/alignment/failure/dynamic-routing coverage.
-6. Reopen a specific design boundary only if real evidence breaks it.
+4. Continue publish-bound source/rights preflight for the first real episode when a concrete asset need appears. Current Venice preflight already found Public Domain and CC BY 4.0 candidates; exact downloaded revision/credit strings remain a later final-selection task.
+5. Audit a new external reuse repository only when it plausibly closes a known gap.
+6. Run another paper episode only if new evidence proves a mechanism class is still not represented by current static/flow/alignment/failure/dynamic-routing coverage.
+7. Reopen a specific design boundary only if real evidence breaks it.
 
-The dynamic-routing test closed the previously identified discrete state/routing gap. The AI-history market review reaffirmed that history is a pillar/context while mechanism remains the channel identity. AniJam does not expose a new architecture gap; it is an execution-route candidate.
+The dynamic-routing test closed the previously identified discrete state/routing gap. The AI-history market review reaffirmed that history is a pillar/context while mechanism remains the channel identity. AniJam does not expose a new architecture gap; it is an execution-route candidate. Venice rights preflight confirms that at least some historical/mechanism/context assets can be sourced through Public Domain or attribution-compatible routes without weakening Evidence Pack authority.
 
 Do **not** fill time by adding new agents, orchestras, artifact types, databases, workbench-specific pipelines, arbitrary paper pilots or framework choices.
 
@@ -118,4 +120,4 @@ A new finding may reopen a specific design contract only when it shows a concret
 - market/editorial differentiation;
 - measurable quality/cost.
 
-Otherwise record the finding as a threshold/provider/prompt/workbench/market lesson and keep the design frozen.
+Otherwise record the finding as a threshold/provider/prompt/workbench/market/rights lesson and keep the design frozen.
